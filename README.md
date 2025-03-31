@@ -48,4 +48,4 @@ ExampleMod mvc.json
 
 ### Installation
 
-Place the RadRefinements.dll into the Sailwind/BepInEx/Plugins folder.
+Place the entire unzipped ModVersionChecker folder into the Sailwind/BepInEx/Plugins folder.
