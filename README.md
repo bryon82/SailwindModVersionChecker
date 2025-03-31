@@ -10,11 +10,12 @@ In the notification there is a button to visit the mod websites to download the 
 
 This works by comparing the version obtained from the BepInEx ChainLoader against the GitHub release 
 tag or Thunderstore package version. The GitHub release tag can have any characters in it as long as 
-there is some form of `int.int.int` in the tag. If you want your mod to be checked by ModVersionChecker, 
-a folder named About with a file named mvc.json must exist in the root of your mod folder structure. 
-mvc.json has fields for repo and website. The repo field should be your `"AuthorName/RepoName"` for 
-checking GitHub releases or `"TeamName/PackageName"` for checking Thunderstore releases. The website 
-to check for releases can be either `"github"` or `"thunderstore"`.
+there is some form of `int.int.int` in the tag. If you want your mod to be checked by 
+ModVersionChecker your mod will need to be in its own folder within the BepInEx/Plugins folder, add a 
+folder named About at the same level as your dll in your folder structure, in the About folder add a file 
+named mvc.json. The file mvc.json has fields for repo and website. The repo field should be 
+`"AuthorName/RepoName"` for checking GitHub releases or `"TeamName/PackageName"` for checking Thunderstore 
+releases. The website to check for releases can be either `"github"` or `"thunderstore"`.
 
 ExampleMod folder structure:
 ```
