@@ -27,7 +27,7 @@ namespace SailwindModVersionChecker
             Destroy(ui.transform.GetChild(2).gameObject);
             text.transform.localPosition = new Vector3(0f, 0.97f, 0.002f);
             textMesh = text.GetComponent<TextMesh>();
-            textMesh.text = "<b>Updates Available</b>\n\n";
+            textMesh.text = "<b>Mod Updates Available</b>\n\n";
             textMesh.fontSize = 50;
             textMesh.lineSpacing = 1.1f;
             
