@@ -13,6 +13,13 @@ namespace SailwindModVersionChecker
 {
     internal class VersionChecker
     {
+        internal static List<string> websites = new List<string>();
+
+        static readonly string githubAPI = "https://api.github.com/repos/";
+        static readonly string thunderstoreAPI = "https://thunderstore.io/api/experimental/package/";
+        static readonly string githubWebsite = "https://github.com/";
+        static readonly string thunderstoreWebsite = "https://thunderstore.io/c/sailwind/p/";
+
         internal static async void Check(Dictionary<string, PluginInfo> pluginInfos)
         {
             var updates = "";
@@ -21,7 +28,7 @@ namespace SailwindModVersionChecker
                 var metadata = plugin.Value.Metadata;
                 var version = metadata.Version.ToString();
 
-                var mvcConfigPath = Path.Combine(Path.GetDirectoryName(plugin.Value.Location), "mvc.json");
+                var mvcConfigPath = Path.Combine(Path.GetDirectoryName(plugin.Value.Location), "About", "mvc.json");
                 if (!File.Exists(mvcConfigPath))
                     continue;
 
@@ -38,8 +45,8 @@ namespace SailwindModVersionChecker
 
                 if (vCurrent.CompareTo(vLatest) < 0)
                 {
-                    updates += $"{metadata.Name}  Installed: {version}  Latest: {latestVersion}\n";
-                    Plugin.logger.LogInfo($"*Update Available*  {metadata.Name}  Installed: {version}  Latest: {latestVersion}");
+                    updates += $"{metadata.Name} {version} → {latestVersion}\n";
+                    Plugin.logger.LogInfo($"*Update Available*  {metadata.Name} {version} → {latestVersion}");
                     continue;
                 }
             }
@@ -47,6 +54,7 @@ namespace SailwindModVersionChecker
             if (!updates.Equals("") && Plugin.enableNotification.Value)
                 UpdatesUI.ui.SetActive(true);
             UpdatesUI.textMesh.text += updates;
+            UpdatesUI.websites = websites;
         }
 
         internal static async Task<string> GetLatestAsync(string url)
@@ -95,15 +103,22 @@ namespace SailwindModVersionChecker
                 JObject mvcConfig = JObject.Parse(File.ReadAllText(mvcConfigPath));
                 if (!ValidateSchema(mvcConfig))
                     return null;
-                if (mvcConfig["website"].ToString().ToLower().Equals("github")) 
+                var website = mvcConfig["website"].ToString().ToLower();
+                if (website.Equals("github")) 
                 {
-                    return $"https://api.github.com/repos/{(string)mvcConfig["repo"]}/releases/latest";
+                    var repoLatestRelease = $"{(string)mvcConfig["repo"]}/releases/latest";
+                    websites.Add($"{githubWebsite}{repoLatestRelease}");
+
+                    return $"{githubAPI}{repoLatestRelease}";
                 } 
-                else if (mvcConfig["website"].ToString().ToLower().Equals("thunderstore"))
+                else if (website.Equals("thunderstore"))
                 {
-                    return $"https://thunderstore.io/api/experimental/package/{(string)mvcConfig["repo"]}";
+                    var repo = (string)mvcConfig["repo"];
+                    websites.Add($"{thunderstoreWebsite}{repo}");
+                    
+                    return $"{thunderstoreAPI}{repo}";
                 }
-                return null;                
+                return null;
             }
             catch (JsonException e)
             {

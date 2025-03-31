@@ -2,7 +2,7 @@
 
 namespace SailwindModVersionChecker
 {
-    internal class GPOkButton : GoPointerButton
+    internal class DismissButton : GoPointerButton
     {
         public GameObject updatesUI;
         public override void OnActivate()

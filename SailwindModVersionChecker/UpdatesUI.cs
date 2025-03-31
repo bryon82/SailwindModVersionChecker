@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace SailwindModVersionChecker
@@ -8,6 +9,7 @@ namespace SailwindModVersionChecker
         public static UpdatesUI instance;
         internal static TextMesh textMesh;
         internal static GameObject ui;
+        internal static List<string> websites;
 
         private void Awake()
         {
@@ -29,14 +31,24 @@ namespace SailwindModVersionChecker
             textMesh.fontSize = 50;
             textMesh.lineSpacing = 1.1f;
             
-            GameObject okButton = ui.transform.GetChild(1).gameObject;
-            okButton.name = "button ok";
-            okButton.transform.localPosition = new Vector3(0f, -0.6f, 0f);
-            okButton.transform.localScale = new Vector3(0.75f, 0.75f, 1f);
-            okButton.GetComponentInChildren<TextMesh>().text = "OK";
-            GameObject buttonGO = okButton.GetComponentInChildren<StartMenuButton>().gameObject;
+            GameObject dismissButton = ui.transform.GetChild(1).gameObject;
+            GameObject visitWebsiteButton = GameObject.Instantiate(dismissButton, dismissButton.transform.parent);
+
+            dismissButton.name = "button dismiss";
+            dismissButton.transform.localPosition = new Vector3(0.5f, -0.6f, 0f);
+            dismissButton.transform.localScale = new Vector3(0.75f, 0.75f, 1f);
+            dismissButton.GetComponentInChildren<TextMesh>().text = "Dismiss";
+            GameObject buttonGO = dismissButton.GetComponentInChildren<StartMenuButton>().gameObject;
             Destroy(buttonGO.GetComponent<StartMenuButton>());
-            buttonGO.AddComponent<GPOkButton>().updatesUI = ui;
+            buttonGO.AddComponent<DismissButton>().updatesUI = ui;
+
+            visitWebsiteButton.name = "button visit website";
+            visitWebsiteButton.transform.localPosition = new Vector3(-0.5f, -0.6f, 0f);
+            visitWebsiteButton.transform.localScale = new Vector3(0.75f, 0.75f, 1f);
+            visitWebsiteButton.GetComponentInChildren<TextMesh>().text = "Visit Mod\nWebsites";
+            buttonGO = visitWebsiteButton.GetComponentInChildren<StartMenuButton>().gameObject;
+            Destroy(buttonGO.GetComponent<StartMenuButton>());
+            buttonGO.AddComponent<VisitWebsiteButton>().updatesUI = ui;
         }
     }
 }
