@@ -49,6 +49,8 @@ namespace SailwindModVersionChecker
                     Plugin.logger.LogInfo($"*Update Available*  {metadata.Name} {version} → {latestVersion}");
                     continue;
                 }
+
+                Plugin.logger.LogInfo($"{metadata.Name} is up to date");
             }
             
             if (!updates.Equals("") && Plugin.enableNotification.Value)
