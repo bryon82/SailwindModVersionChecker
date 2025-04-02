@@ -23,9 +23,9 @@ namespace SailwindModVersionChecker
         internal static async void Check(Dictionary<string, PluginInfo> pluginInfos)
         {
             _httpClient = new HttpClient();
-            _httpClient.DefaultRequestHeaders.Add("User-Agent", "C# GitHub Content Fetcher");
-
             var modDict = new Dictionary<string, string>();
+
+            _httpClient.DefaultRequestHeaders.Add("User-Agent", "C# GitHub Content Fetcher");
             var modList = await GetModList();
             foreach (JToken mod in modList)
             {
@@ -34,7 +34,6 @@ namespace SailwindModVersionChecker
 
             _httpClient.DefaultRequestHeaders.Remove("User_Agent");
             _httpClient.DefaultRequestHeaders.Add("User-Agent", "C# GitHub API Client");
-
             var updates = "";
             foreach (var plugin in pluginInfos)
             {
@@ -92,39 +91,6 @@ namespace SailwindModVersionChecker
             UpdatesUI.websites = websites;
         }
 
-        internal static async Task<string> GetLatestAsync(string url)
-        {
-            try
-            {
-                HttpResponseMessage response = await _httpClient.GetAsync(url);
-                response.EnsureSuccessStatusCode();
-                string jsonResponse = await response.Content.ReadAsStringAsync();
-                JObject releaseInfo = JObject.Parse(jsonResponse);
-
-                if (url.Contains("github"))
-                    return Regex.Match((string)releaseInfo["tag_name"], @"(\d+\.\d+\.\d+)").Groups[1].Value;
-                if (url.Contains("thunderstore"))
-                    return (string)releaseInfo["latest"]["version_number"];
-
-                return null;
-            }
-            catch (HttpRequestException e)
-            {
-                Plugin.logger.LogError($"Error accessing website API: {e.Message}");
-                return null;
-            }
-            catch (JsonException e)
-            {
-                Plugin.logger.LogError($"Error parsing JSON response: {e.Message}");
-                return null;
-            }
-            catch (Exception e)
-            {
-                Plugin.logger.LogError($"An unexpected error occurred: {e.Message}");
-                return null;
-            }
-        }
-
         internal static async Task<JArray> GetModList()
         {
             try
@@ -133,7 +99,7 @@ namespace SailwindModVersionChecker
 
                 response.EnsureSuccessStatusCode();
 
-                var jsonContent = await response.Content.ReadAsStringAsync();                    
+                var jsonContent = await response.Content.ReadAsStringAsync();
                 return JArray.Parse(jsonContent);
             }
             catch (HttpRequestException e)
@@ -165,6 +131,39 @@ namespace SailwindModVersionChecker
             }
 
             return null;
+        }
+
+        internal static async Task<string> GetLatestAsync(string url)
+        {
+            try
+            {
+                HttpResponseMessage response = await _httpClient.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+                string jsonResponse = await response.Content.ReadAsStringAsync();
+                JObject releaseInfo = JObject.Parse(jsonResponse);
+
+                if (url.Contains("github"))
+                    return Regex.Match((string)releaseInfo["tag_name"], @"(\d+\.\d+\.\d+)").Groups[1].Value;
+                if (url.Contains("thunderstore"))
+                    return (string)releaseInfo["latest"]["version_number"];
+
+                return null;
+            }
+            catch (HttpRequestException e)
+            {
+                Plugin.logger.LogError($"Error accessing website API: {e.Message}");
+                return null;
+            }
+            catch (JsonException e)
+            {
+                Plugin.logger.LogError($"Error parsing JSON response: {e.Message}");
+                return null;
+            }
+            catch (Exception e)
+            {
+                Plugin.logger.LogError($"An unexpected error occurred: {e.Message}");
+                return null;
+            }
         }
     }
 }
