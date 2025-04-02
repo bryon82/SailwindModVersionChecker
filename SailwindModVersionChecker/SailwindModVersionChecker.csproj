@@ -37,9 +37,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\Dependencies\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json.Schema">
-      <HintPath>..\Dependencies\Newtonsoft.Json.Schema.dll</HintPath>
-    </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>E:\SteamLibrary\steamapps\common\Sailwind\Sailwind_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
@@ -77,13 +74,11 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)$(AssemblyName).VS.props" />
   <ItemGroup>
-    <_CopyItemsAbout Include="$(SolutionDir)\About\**\*.*" />
     <_CopyItemsDependencies Include="C:\Users\Bryon\dev\projects\SailwindMods\SailwindModVersionChecker\Dependencies\Newtonsoft.Json.dll" />
   </ItemGroup>
   <Target Name="AfterBuild">
     <RemoveDir Directories="$(BepInExPluginsDirectory)\$(ModName)" />
     <Copy SourceFiles="$(ProjectDir)\bin\Debug\$(ModName).dll" DestinationFolder="$(BepInExPluginsDirectory)\$(ModName)" ContinueOnError="true" />
-    <Copy SourceFiles="@(_CopyItemsAbout)" DestinationFolder="$(BepInExPluginsDirectory)\$(ModName)\About\%(RecursiveDir)" ContinueOnError="true" />
     <Copy SourceFiles="@(_CopyItemsDependencies)" DestinationFolder="$(BepInExPluginsDirectory)\$(ModName)\Dependencies\%(RecursiveDir)" ContinueOnError="true" />
   </Target>
 </Project>

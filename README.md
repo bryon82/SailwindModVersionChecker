@@ -3,6 +3,7 @@
 Checks mod versions against their release versions on either GitHub or Thunderstore websites. 
 If there are any updates available for installed mods, a notification will pop up on game startup. 
 In the notification there is a button to visit the mod websites to download the available updates. 
+Note: This only works with BepInEx mods. 
 
 ![Screenshot of Updates Available Notification](https://github.com/bryon82/SailwindModVersionChecker/blob/main/Screenshots/ModVersionChecker.png)  
 
@@ -11,30 +12,15 @@ In the notification there is a button to visit the mod websites to download the 
 This works by comparing the version obtained from the BepInEx ChainLoader against the GitHub release 
 tag or Thunderstore package version. The GitHub release tag can have any characters in it as long as 
 there is some form of `int.int.int` in the tag. If you want your mod to be checked by 
-ModVersionChecker your mod will need to be in its own folder within the BepInEx/Plugins folder, add a 
-folder named About at the same level as your dll in your folder structure, in the About folder add a file 
-named mvc.json. The file mvc.json has fields for repo and website. The repo field should be 
-`"AuthorName/RepoName"` for checking GitHub releases or `"TeamName/PackageName"` for checking Thunderstore 
-releases. The website to check for releases can be either `"github"` or `"thunderstore"`.
+ModVersionChecker your mod will need to be listed in [ModList.json](https://github.com/bryon82/SailwindModVersionChecker/blob/main/ModList.json). 
+If you want your mod listed or you need to update your mod entry send a pull request with the necessary changes. 
+Here is an example entry:
 
-ExampleMod folder structure:
-```
-ExampleMod
-|
-|---About
-|   |
-|   |---mvc.json
-|
-|---ExampleMod.dll
-
-```
-
-ExampleMod mvc.json
+ExampleMod entry
 ```json
-
 {
-	"repo": "ExampleAuthor/ExampleMod",
-	"website": "github"
+    "guid": "com.exampleauthor.examplemod",
+    "repo": "https://github.com/exampleAuthor/exampleMod"
 }
 
 ```
