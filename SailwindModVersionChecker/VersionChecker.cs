@@ -12,6 +12,7 @@ namespace SailwindModVersionChecker
     internal class VersionChecker
     {
         internal static List<string> websites = new List<string>();
+        private static HttpClient _httpClient;
 
         const string modListurl = "https://raw.githubusercontent.com/bryon82/SailwindModVersionChecker/main/ModList.json";
         const string githubAPI = "https://api.github.com/repos/";
@@ -21,13 +22,18 @@ namespace SailwindModVersionChecker
 
         internal static async void Check(Dictionary<string, PluginInfo> pluginInfos)
         {
+            _httpClient = new HttpClient();
+            _httpClient.DefaultRequestHeaders.Add("User-Agent", "C# GitHub Content Fetcher");
+
             var modDict = new Dictionary<string, string>();
             var modList = await GetModList();
             foreach (JToken mod in modList)
             {
                 modDict.Add(mod["guid"].ToString(), mod["repo"].ToString());
             }
-                
+
+            _httpClient.DefaultRequestHeaders.Remove("User_Agent");
+            _httpClient.DefaultRequestHeaders.Add("User-Agent", "C# GitHub API Client");
 
             var updates = "";
             foreach (var plugin in pluginInfos)
@@ -82,24 +88,18 @@ namespace SailwindModVersionChecker
         internal static async Task<string> GetLatestAsync(string url)
         {
             try
-            {
-                using (HttpClient client = new HttpClient())
-                {                    
-                    // GitHub API requires a user agent
-                    if (url.Contains("github"))
-                        client.DefaultRequestHeaders.Add("User-Agent", "C# GitHub API Client");
+            {                    
+                HttpResponseMessage response = await _httpClient.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+                string jsonResponse = await response.Content.ReadAsStringAsync();
+                JObject releaseInfo = JObject.Parse(jsonResponse);
                     
-                    HttpResponseMessage response = await client.GetAsync(url);
-                    response.EnsureSuccessStatusCode();
-                    string jsonResponse = await response.Content.ReadAsStringAsync();
-                    JObject releaseInfo = JObject.Parse(jsonResponse);
-                    
-                    if (url.Contains("github"))
-                        return Regex.Match((string)releaseInfo["tag_name"], @"(\d+\.\d+\.\d+)").Groups[1].Value;
-                    if (url.Contains("thunderstore"))
-                        return (string)releaseInfo["latest"]["version_number"];
-                    return null;
-                }
+                if (url.Contains("github"))
+                    return Regex.Match((string)releaseInfo["tag_name"], @"(\d+\.\d+\.\d+)").Groups[1].Value;
+                if (url.Contains("thunderstore"))
+                    return (string)releaseInfo["latest"]["version_number"];
+
+                return null;                
             }
             catch (HttpRequestException e)
             {
@@ -121,17 +121,13 @@ namespace SailwindModVersionChecker
         internal static async Task<JArray> GetModList()
         {
             try
-            {
-                using (HttpClient client = new HttpClient())
-                {
-                    client.DefaultRequestHeaders.Add("User-Agent", "C# GitHub Content Fetcher");
-                    HttpResponseMessage response = await client.GetAsync(modListurl);
+            {                    
+                HttpResponseMessage response = await _httpClient.GetAsync(modListurl);
 
-                    response.EnsureSuccessStatusCode();
+                response.EnsureSuccessStatusCode();
 
-                    var jsonContent = await response.Content.ReadAsStringAsync();                    
-                    return JArray.Parse(jsonContent);
-                }
+                var jsonContent = await response.Content.ReadAsStringAsync();                    
+                return JArray.Parse(jsonContent);
             }
             catch (HttpRequestException e)
             {
@@ -160,8 +156,8 @@ namespace SailwindModVersionChecker
             {
                 return $"{thunderstoreAPI}{website.Replace(thunderstoreWebsite, "")}";
             }
-            return null;
             
+            return null;            
         }
     }
 }
