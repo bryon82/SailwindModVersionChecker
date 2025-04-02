@@ -48,6 +48,16 @@
     },
     {
     
+        "guid": "pr0skynesis.passagedude",
+        "repo": "https://github.com/alesparise/PassageDude-Sailwind-Mod"
+    },
+    {
+    
+        "guid": "pr0skynesis.shipyardcodes",
+        "repo": "https://github.com/alesparise/ShipyardCodes-Sailwind-Mod"
+    },
+    {
+    
         "guid": "com.nandbrew.nandfixes",
         "repo": "https://github.com/NANDbrew/NANDFixes"
     },
@@ -120,6 +130,11 @@
     
         "guid": "NatoriusG.AllSailsAllShipyards",
         "repo": "https://github.com/NANDbrew/AllSailsAllShipyards"
+    },
+    {
+    
+        "guid": "com.nandbrew.simpletides",
+        "repo": "https://github.com/NANDbrew/SimpleTides"
     },
     {
     
