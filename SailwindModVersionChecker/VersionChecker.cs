@@ -1,10 +1,8 @@
 ﻿using BepInEx;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Schema;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -15,24 +13,33 @@ namespace SailwindModVersionChecker
     {
         internal static List<string> websites = new List<string>();
 
-        static readonly string githubAPI = "https://api.github.com/repos/";
-        static readonly string thunderstoreAPI = "https://thunderstore.io/api/experimental/package/";
-        static readonly string githubWebsite = "https://github.com/";
-        static readonly string thunderstoreWebsite = "https://thunderstore.io/c/sailwind/p/";
+        const string modListurl = "https://raw.githubusercontent.com/bryon82/SailwindModVersionChecker/main/ModList.json";
+        const string githubAPI = "https://api.github.com/repos/";
+        const string thunderstoreAPI = "https://thunderstore.io/api/experimental/package/";
+        const string githubWebsite = "https://github.com/";
+        const string thunderstoreWebsite = "https://thunderstore.io/c/sailwind/p/";
 
         internal static async void Check(Dictionary<string, PluginInfo> pluginInfos)
         {
+            var modDict = new Dictionary<string, string>();
+            var modList = await GetModList();
+            foreach (JToken mod in modList)
+            {
+                modDict.Add(mod["guid"].ToString(), mod["repo"].ToString());
+            }
+                
+
             var updates = "";
             foreach (var plugin in pluginInfos)
             {
                 var metadata = plugin.Value.Metadata;
+                var guid = metadata.GUID;
                 var version = metadata.Version.ToString();
 
-                var mvcConfigPath = Path.Combine(Path.GetDirectoryName(plugin.Value.Location), "About", "mvc.json");
-                if (!File.Exists(mvcConfigPath))
+                if (!modDict.ContainsKey(guid) || modDict[guid] == null)
                     continue;
 
-                var url = GetUrl(mvcConfigPath);
+                var url = GetUrl(modDict[guid]);
                 if (url == null)
                     continue;
 
@@ -40,13 +47,26 @@ namespace SailwindModVersionChecker
                 if (latestVersion == null)
                     continue;
 
-                var vCurrent =  new Version(version);
-                var vLatest = new Version(latestVersion);
+                Version vCurrent;
+                Version vLatest;
+
+                try
+                {
+                    vCurrent = new Version(version);
+                    vLatest = new Version(latestVersion);
+                }
+                catch (ArgumentException e)
+                {
+                    Plugin.logger.LogWarning($"{guid}: {e.Message}");
+                    continue;
+                }                
 
                 if (vCurrent.CompareTo(vLatest) < 0)
                 {
                     updates += $"{metadata.Name} {version} → {latestVersion}\n";
                     Plugin.logger.LogInfo($"*Update Available*  {metadata.Name} {version} → {latestVersion}");
+                    var website = modDict[guid].Contains(githubWebsite) ? $"{modDict[guid]}/releases/latest" : modDict[guid];
+                    websites.Add(website);
                     continue;
                 }
 
@@ -98,54 +118,50 @@ namespace SailwindModVersionChecker
             }
         }
 
-        internal static string GetUrl(string mvcConfigPath)
+        internal static async Task<JArray> GetModList()
         {
             try
             {
-                JObject mvcConfig = JObject.Parse(File.ReadAllText(mvcConfigPath));
-                if (!ValidateSchema(mvcConfig))
-                    return null;
-                var website = mvcConfig["website"].ToString().ToLower();
-                if (website.Equals("github")) 
+                using (HttpClient client = new HttpClient())
                 {
-                    var repoLatestRelease = $"{(string)mvcConfig["repo"]}/releases/latest";
-                    websites.Add($"{githubWebsite}{repoLatestRelease}");
+                    client.DefaultRequestHeaders.Add("User-Agent", "C# GitHub Content Fetcher");
+                    HttpResponseMessage response = await client.GetAsync(modListurl);
 
-                    return $"{githubAPI}{repoLatestRelease}";
-                } 
-                else if (website.Equals("thunderstore"))
-                {
-                    var repo = (string)mvcConfig["repo"];
-                    websites.Add($"{thunderstoreWebsite}{repo}");
-                    
-                    return $"{thunderstoreAPI}{repo}";
+                    response.EnsureSuccessStatusCode();
+
+                    var jsonContent = await response.Content.ReadAsStringAsync();                    
+                    return JArray.Parse(jsonContent);
                 }
+            }
+            catch (HttpRequestException e)
+            {
+                Plugin.logger.LogError($"Error accessing website API: {e.Message}");
                 return null;
             }
             catch (JsonException e)
             {
-                Plugin.logger.LogError($"Error parsing mvc JSON: {e.Message}");
+                Plugin.logger.LogError($"Error parsing JSON response: {e.Message}");
                 return null;
             }
             catch (Exception e)
             {
-                Plugin.logger.LogError($"Error reading mvc config: {e.Message}");
+                Plugin.logger.LogError($"An unexpected error occurred: {e.Message}");
                 return null;
             }
         }
 
-        internal static bool ValidateSchema(JObject mvcConfig)
-        {
-            JSchema schema = JSchema.Parse(@"{ 
-                'description': 'A MVC config',
-                'type': 'object',
-                'properties': {
-                    'repo':{'type': 'string'},
-                    'website':{'type': 'string'}
-                }
-            }");
-
-            return mvcConfig.IsValid(schema);
+        internal static string GetUrl(string website)
+        {            
+            if (website.Contains(githubWebsite))
+            {
+                return $"{githubAPI}{website.Replace(githubWebsite, "")}/releases/latest";
+            }
+            else if (website.Contains(thunderstoreWebsite))
+            {
+                return $"{thunderstoreAPI}{website.Replace(thunderstoreWebsite, "")}";
+            }
+            return null;
+            
         }
     }
 }

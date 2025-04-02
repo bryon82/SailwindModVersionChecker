@@ -78,7 +78,7 @@
   <Import Project="$(SolutionDir)$(AssemblyName).VS.props" />
   <ItemGroup>
     <_CopyItemsAbout Include="$(SolutionDir)\About\**\*.*" />
-    <_CopyItemsDependencies Include="$(SolutionDir)\Dependencies\**\*.*" />
+    <_CopyItemsDependencies Include="C:\Users\Bryon\dev\projects\SailwindMods\SailwindModVersionChecker\Dependencies\Newtonsoft.Json.dll" />
   </ItemGroup>
   <Target Name="AfterBuild">
     <RemoveDir Directories="$(BepInExPluginsDirectory)\$(ModName)" />
