@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v1.1.0] - 2025-04-02
+
+### Changed
+
+- To get a mod's repo website, MVC now uses a list hosted on its own GitHub repo.
+
 ## [v1.0.2] - 2025-03-31
 
 ### Added
