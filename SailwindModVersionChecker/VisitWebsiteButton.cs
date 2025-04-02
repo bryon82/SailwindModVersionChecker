@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System;
-using System.Diagnostics;
 
 namespace SailwindModVersionChecker
 {
@@ -14,15 +13,15 @@ namespace SailwindModVersionChecker
             {
                 try
                 {
-                    Process.Start(website);
+                    Application.OpenURL(website);
                 }
                 catch (Exception e)
                 {
                     Plugin.logger.LogError(e);
                 }
             }
-            
-            updatesUI.gameObject.SetActive(false);          
+
+            updatesUI.gameObject.SetActive(false);
         }
     }
 }

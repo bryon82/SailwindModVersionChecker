@@ -65,20 +65,27 @@ namespace SailwindModVersionChecker
                 {
                     Plugin.logger.LogWarning($"{guid}: {e.Message}");
                     continue;
-                }                
+                }
 
                 if (vCurrent.CompareTo(vLatest) < 0)
                 {
                     updates += $"{metadata.Name} {version} → {latestVersion}\n";
                     Plugin.logger.LogInfo($"*Update Available*  {metadata.Name} {version} → {latestVersion}");
-                    var website = modDict[guid].Contains(githubWebsite) ? $"{modDict[guid]}/releases/latest" : modDict[guid];
-                    websites.Add(website);
+                    if (modDict[guid].StartsWith(githubWebsite))
+                    {
+                        websites.Add($"{modDict[guid]}/releases/latest");
+                    }                        
+                    else if (modDict[guid].StartsWith(thunderstoreWebsite))
+                    {
+                        websites.Add(modDict[guid]);
+                    }
+                        
                     continue;
                 }
 
                 Plugin.logger.LogInfo($"{metadata.Name} is up to date");
             }
-            
+
             if (!updates.Equals("") && Plugin.enableNotification.Value)
                 UpdatesUI.ui.SetActive(true);
             UpdatesUI.textMesh.text += updates;
@@ -88,18 +95,18 @@ namespace SailwindModVersionChecker
         internal static async Task<string> GetLatestAsync(string url)
         {
             try
-            {                    
+            {
                 HttpResponseMessage response = await _httpClient.GetAsync(url);
                 response.EnsureSuccessStatusCode();
                 string jsonResponse = await response.Content.ReadAsStringAsync();
                 JObject releaseInfo = JObject.Parse(jsonResponse);
-                    
+
                 if (url.Contains("github"))
                     return Regex.Match((string)releaseInfo["tag_name"], @"(\d+\.\d+\.\d+)").Groups[1].Value;
                 if (url.Contains("thunderstore"))
                     return (string)releaseInfo["latest"]["version_number"];
 
-                return null;                
+                return null;
             }
             catch (HttpRequestException e)
             {
@@ -121,7 +128,7 @@ namespace SailwindModVersionChecker
         internal static async Task<JArray> GetModList()
         {
             try
-            {                    
+            {
                 HttpResponseMessage response = await _httpClient.GetAsync(modListurl);
 
                 response.EnsureSuccessStatusCode();
@@ -147,17 +154,17 @@ namespace SailwindModVersionChecker
         }
 
         internal static string GetUrl(string website)
-        {            
-            if (website.Contains(githubWebsite))
+        {
+            if (website.StartsWith(githubWebsite))
             {
                 return $"{githubAPI}{website.Replace(githubWebsite, "")}/releases/latest";
             }
-            else if (website.Contains(thunderstoreWebsite))
+            else if (website.StartsWith(thunderstoreWebsite))
             {
                 return $"{thunderstoreAPI}{website.Replace(thunderstoreWebsite, "")}";
             }
-            
-            return null;            
+
+            return null;
         }
     }
 }
