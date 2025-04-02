@@ -35,4 +35,8 @@ ExampleMod entry
 
 ### Installation
 
-Place the entire unzipped ModVersionChecker folder into the Sailwind/BepInEx/Plugins folder.
+**Download from Github**  
+Inside the extracted ModVersionChecker-\<version\> folder copy the ModVersionFolder and  paste it into the Sailwind/BepInEx/Plugins folder.
+
+**Download from Thunderstore**  
+Extract the zip, remove the appended version number from the resulting folder, and copy that entire folder (not just the contents) into the Sailwind/BepInEx/Plugins folder. 
