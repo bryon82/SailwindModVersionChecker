@@ -1,11 +1,11 @@
 [
     {
-        "guid": "com.raddude82.sailadex",
-        "repo": "https://github.com/bryon82/Sail-a-dex"
-    },
-    {
         "guid": "zzz.raddude82.modversionchecker",
         "repo": "https://github.com/bryon82/SailwindModVersionChecker"
+    },
+    {
+        "guid": "com.raddude82.sailadex",
+        "repo": "https://github.com/bryon82/Sail-a-dex"
     },
     {
         "guid": "com.raddude82.randomencounters",
