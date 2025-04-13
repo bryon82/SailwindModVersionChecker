@@ -31,9 +31,8 @@ jobs:
         run: |
           python ./.github/scripts/check_releases.py
           
-      - name: Upload releases JSON as artifact
-        if: ${{ env.NEW_RELEASES == 'true' }}
+      - name: Upload release versions JSON as artifact
         uses: actions/upload-artifact@v3
         with:
-          name: new-releases
-          path: ./new_releases.json
+          name: release-versions
+          path: ./release_versions.json
