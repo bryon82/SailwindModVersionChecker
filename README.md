@@ -26,6 +26,7 @@ ExampleMod entry
 ## Configurable
 
 * Enable/disable notification.
+* Enable/disable checking for updates.
 
 ### Requires
 

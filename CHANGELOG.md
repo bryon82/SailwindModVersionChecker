@@ -2,7 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v1.1.3] - 2025-04-02
+## [v1.2.0] - 2025-04-13
+
+### Changed
+- The way individual mods versions are checked has been overhauled. Now the release versions are checked by a github action and the list of versions are populated in a json file on this repo. This makes startup a little faster as every time the game starts up it is no longer pinging every installed mods release pages.
+
+## [v1.1.3] - 2025-04-13
 
 ### Added
 - Config entry to disable checking for updates

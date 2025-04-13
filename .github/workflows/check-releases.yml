@@ -44,8 +44,8 @@ jobs:
       - name: Verify release_versions.json exists
         run: |
           if [ ! -f ./release_versions.json ]; then
-            echo "Error: release_versions.json not found!";
-            exit 1;
+              echo "Error: release_versions.json not found!";
+              exit 1;
           fi
 
       - name: Upload release versions JSON as artifact
@@ -57,9 +57,8 @@ jobs:
 
       - name: Push release_versions.json
         run: |
-            git config --global user.name "github-actions[bot]"
-            git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-            git add -A
-            git commit -m "release_versions.json updated"
-            git push
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "release_versions.json updated"
+          git push || echo "Nothing to push"

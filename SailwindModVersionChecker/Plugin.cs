@@ -12,7 +12,7 @@ namespace SailwindModVersionChecker
     {        
         public const string PLUGIN_GUID = "zzz.raddude82.modversionchecker";
         public const string PLUGIN_NAME = "ModVersionChecker";
-        public const string PLUGIN_VERSION = "1.1.3";
+        public const string PLUGIN_VERSION = "1.2.0";
 
         internal static ManualLogSource logger;
 
