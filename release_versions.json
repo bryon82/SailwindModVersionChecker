@@ -1,0 +1,138 @@
+[
+  {
+    "guid": "zzz.raddude82.modversionchecker",
+    "version": "v1.1.3"
+  },
+  {
+    "guid": "com.raddude82.sailadex",
+    "version": "v1.4.5"
+  },
+  {
+    "guid": "com.raddude82.randomencounters",
+    "version": "v1.1.7"
+  },
+  {
+    "guid": "com.raddude82.modsavebackups",
+    "version": "v1.1.1"
+  },
+  {
+    "guid": "com.raddude82.radfixes",
+    "version": "v1.1.4"
+  },
+  {
+    "guid": "com.raddude82.radrefinements",
+    "version": "v1.0.13"
+  },
+  {
+    "guid": "pr0skynesis.cookedinfo",
+    "version": "v1.2.3"
+  },
+  {
+    "guid": "pr0skynesis.dinghies",
+    "version": "v1.0.8"
+  },
+  {
+    "guid": "pr0skynesis.sailinfo",
+    "version": "v1.1.10"
+  },
+  {
+    "guid": "pr0skynesis.profitpercent",
+    "version": "v1.2.1"
+  },
+  {
+    "guid": "pr0skynesis.passagedude",
+    "version": "v1.0.6"
+  },
+  {
+    "guid": "pr0skynesis.shipyardcodes",
+    "version": "v1.0.0"
+  },
+  {
+    "guid": "com.nandbrew.nandfixes",
+    "version": "v1.1.2"
+  },
+  {
+    "guid": "com.nandbrew.shipyardexpansion",
+    "version": "v0.5.12"
+  },
+  {
+    "guid": "com.nandbrew.savecleaner",
+    "version": "0.3.0"
+  },
+  {
+    "guid": "com.nandbrew.nandtweaks",
+    "version": "v1.5.0"
+  },
+  {
+    "guid": "com.nandbrew.anchorimprovements",
+    "version": "v1.1.6"
+  },
+  {
+    "guid": "com.nandbrew.furniturefix",
+    "version": "v1.1.3"
+  },
+  {
+    "guid": "com.nandbrew.sailwinddifficulty",
+    "version": "v1.1.1"
+  },
+  {
+    "guid": "com.nandbrew.PortableSaves",
+    "version": "v1.0.0"
+  },
+  {
+    "guid": "com.nandbrew.towableboats",
+    "version": "v0.2.3"
+  },
+  {
+    "guid": "com.nandbrew.boatcolors",
+    "version": "v0.2.2"
+  },
+  {
+    "guid": "com.nandbrew.dynamiclights",
+    "version": "v0.3.1"
+  },
+  {
+    "guid": "com.nandbrew.missionrework",
+    "version": "v1.0.2"
+  },
+  {
+    "guid": "com.nandbrew.stickyfix",
+    "version": "none"
+  },
+  {
+    "guid": "com.nandbrew.sailcollisionfix",
+    "version": "v1.1.2a"
+  },
+  {
+    "guid": "NatoriusG.AllSailsAllShipyards",
+    "version": "v1.0.1"
+  },
+  {
+    "guid": "com.nandbrew.simpletides",
+    "version": "v1.0.2"
+  },
+  {
+    "guid": "com.TheOriginOfAllEvil.ShatteredSeas",
+    "version": "b1.2.0"
+  },
+  {
+    "guid": "com.TheOriginOfAllEvil.ImprovedHorizon",
+    "version": "v1.3.0"
+  },
+  {
+    "guid": "com.TheOriginOfAllEvil.ClipperCleaner",
+    "version": "1.0.0"
+  },
+  {
+    "guid": "com.app24.coordinateviewer",
+    "version": "none"
+  },
+  {
+    "guid": "com.jakeinaboat.cargocontroller",
+    "version": "v0.3.1"
+  },
+  {
+    "guid": "com.yourname.sailwind.sealifeplugin",
+    "version": "release"
+  }
+]
