@@ -23,17 +23,15 @@ namespace SailwindModVersionChecker
         internal static async void Check(Dictionary<string, PluginInfo> pluginInfos)
         {
             _httpClient = new HttpClient();
-            var modDict = new Dictionary<string, string>();
-
             _httpClient.DefaultRequestHeaders.Add("User-Agent", "C# GitHub Content Fetcher");
+            
+            var modDict = new Dictionary<string, string>();            
             var modList = await GetModList();
             foreach (JToken mod in modList)
             {
                 modDict.Add(mod["guid"].ToString(), mod["repo"].ToString());
             }
 
-            _httpClient.DefaultRequestHeaders.Remove("User_Agent");
-            _httpClient.DefaultRequestHeaders.Add("User-Agent", "C# GitHub API Client");
             var updates = "";
             foreach (var plugin in pluginInfos)
             {
@@ -73,12 +71,12 @@ namespace SailwindModVersionChecker
                     if (modDict[guid].StartsWith(githubWebsite))
                     {
                         websites.Add($"{modDict[guid]}/releases/latest");
-                    }                        
+                    }
                     else if (modDict[guid].StartsWith(thunderstoreWebsite))
                     {
                         websites.Add(modDict[guid]);
                     }
-                        
+
                     continue;
                 }
 

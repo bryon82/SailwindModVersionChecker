@@ -1,9 +1,8 @@
 # ModVersionChecker
 
-Checks mod versions against their release versions on either GitHub or Thunderstore websites. 
+Checks the version of BepInEx mods against their release versions on either GitHub or Thunderstore websites. 
 If there are any updates available for installed mods, a notification will pop up on game startup. 
 In the notification there is a button to visit the mod websites to download the available updates. 
-Note: This only works with BepInEx mods. 
 
 ![Screenshot of Updates Available Notification](https://github.com/bryon82/SailwindModVersionChecker/blob/main/Screenshots/ModVersionChecker.png)  
 
@@ -22,7 +21,6 @@ ExampleMod entry
     "guid": "com.exampleauthor.examplemod",
     "repo": "https://github.com/exampleAuthor/exampleMod"
 }
-
 ```
 
 ## Configurable
@@ -35,8 +33,11 @@ ExampleMod entry
 
 ### Installation
 
-**Download from Github**  
-Inside the extracted ModVersionChecker-\<version\> folder copy the ModVersionChecker folder and paste it into the Sailwind/BepInEx/Plugins folder.
+If updating, remove ModVersionChecker folders and/or ModVersionChecker.dll files from previous installations.  
+<br>
+Extract the downloaded zip. Inside the extracted ModVersionChecker-\<version\> folder copy the ModVersionChecker folder and paste it into the Sailwind/BepInEx/Plugins folder.  
 
-**Download from Thunderstore**  
-Extract the zip, remove the appended version number from the resulting folder, and copy that entire folder (not just the contents) into the Sailwind/BepInEx/Plugins folder. 
+#### Consider supporting me 🤗
+
+<a href='https://www.paypal.com/donate/?business=WKY25BB3TSH6E&no_recurring=0&item_name=Thank+you+for+your+support%21+I%27m+glad+you+are+enjoying+my+mods%21&currency_code=USD' target='_blank'><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" alt="Donate with PayPal button" />
+<a href='https://ko-fi.com/S6S11DDLMC' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
