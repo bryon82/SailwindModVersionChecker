@@ -82,6 +82,7 @@ def generate_versions_json(versions_data):
     for item in versions_data:
         versions_json.append({
             "guid": item["guid"],
+            "repo": item["repo"],
             "version": item["version"]
         })
 
