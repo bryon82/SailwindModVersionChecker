@@ -2,7 +2,7 @@ name: Check Release Versions
 
 on:
   schedule:
-    # Runs every 30 minutes
+    # Runs 20 minutes past the hour
     - cron: '20 * * * *'
   workflow_dispatch:
     # Allows manual triggering
