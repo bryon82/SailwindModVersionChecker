@@ -1,16 +1,21 @@
 #!/usr/bin/env python3
 """
-Script to check for new releases in configured repositories.
+Script to check for new releases in GitHub repositories and Thunderstore packages.
+Place this file in .github/scripts/check_releases.py
 """
 import os
 import json
 import re
+import requests
 import github
 from github import Github
 
 # Configuration files
 MOD_LIST_FILE = "ModList.json"
 RELEASE_VERSIONS_FILE = "release_versions.json"
+
+# Thunderstore API base URL
+THUNDERSTORE_API_URL = "https://thunderstore.io/api/experimental"
 
 def load_mod_list():
     """Load repository list from ModList.json"""
@@ -27,14 +32,48 @@ def extract_repo_info(repo_url):
         return f"{match.group(1)}/{match.group(2)}"
     return None
 
-def get_latest_release(repo_name, g):
-    """Get the latest release for a repository"""
+def extract_thunderstore_info(package_url):
+    """Extract community, author, and package name from a Thunderstore URL"""
+    # or https://thunderstore.io/c/game/p/Author/PackageName/
+    pattern = r"(?:https?://)?(?:www\.)?thunderstore\.io/c/([^/]+)/p/([^/]+)/([^/]+)/?.*"
+        
+    match = re.match(pattern, package_url)
+    if match:
+        return {
+            "community": match.group(1),
+            "author": match.group(2),
+            "package": match.group(3)
+        }
+    
+    return None
+
+def get_latest_github_release(repo_name, g):
+    """Get the latest release for a GitHub repository"""
     try:
         repo = g.get_repo(repo_name)
         latest_release = repo.get_latest_release()
         return latest_release.tag_name
     except github.GithubException as e:
-        print(f"Error fetching release for {repo_name}: {e}")
+        print(f"Error fetching release for GitHub repo {repo_name}: {e}")
+        return None
+
+def get_latest_thunderstore_version(package_info):
+    """Get the latest version for a Thunderstore package"""
+    try:
+        community = package_info["community"]
+        author = package_info["author"]
+        package = package_info["package"]
+        url = f"{THUNDERSTORE_API_URL}/package/{author}/{package}/"
+        
+        response = requests.get(url)
+        if response.status_code == 200:
+            package_data = response.json()
+            return package_data.get("latest").get("version_number")
+        else:
+            print(f"Error fetching Thunderstore package {author}/{package}: HTTP {response.status_code}")
+            return None
+    except Exception as e:
+        print(f"Error fetching Thunderstore package {author}/{package}: {e}")
         return None
 
 def generate_versions_json(versions_data):
@@ -52,14 +91,12 @@ def generate_versions_json(versions_data):
 
 def main():
     github_token = os.environ.get("GITHUB_TOKEN")
-    if not github_token:
-        print("GITHUB_TOKEN not provided")
-        return
+    g = None
+    if github_token:
+        g = Github(github_token)
     
-    g = Github(github_token)
     mods = load_mod_list()
     all_versions = []
-    has_updates = False
     
     for mod in mods:
         guid = mod.get("guid")
@@ -69,32 +106,47 @@ def main():
             print(f"Skipping invalid mod entry: {mod}")
             continue
         
+        version = "none"
+        
+        # Check if this is a GitHub repository
         repo_name = extract_repo_info(repo_url)
-        if not repo_name:
-            print(f"Could not extract repository info from URL: {repo_url}")
-            continue
+        if repo_name:
+            if g:
+                print(f"Checking GitHub release for {repo_name} (GUID: {guid})")
+                latest_version = get_latest_github_release(repo_name, g)
+                if latest_version:
+                    version = latest_version
+                    print(f"Latest GitHub version for {repo_name} (GUID: {guid}): {version}")
+            else:
+                print("GITHUB_TOKEN not provided, skipping GitHub repository checks")
         
-        print(f"Checking releases for {repo_name} (GUID: {guid})")
-        latest_version = get_latest_release(repo_name, g)
+        # Check if this is a Thunderstore package
+        elif "thunderstore.io" in repo_url:
+            package_info = extract_thunderstore_info(repo_url)
+            if package_info:
+                author = package_info["author"]
+                package = package_info["package"]
+                print(f"Checking Thunderstore package for {author}/{package} (GUID: {guid})")
+                latest_version = get_latest_thunderstore_version(package_info)
+                if latest_version:
+                    version = latest_version
+                    print(f"Latest Thunderstore version for {author}/{package} (GUID: {guid}): {version}")
+            else:
+                print(f"Could not extract Thunderstore package info from URL: {repo_url}")
         
+        else:
+            print(f"Unsupported repository URL format: {repo_url}")
+        
+        # Add to our versions list
         version_entry = {
             "guid": guid,
-            "version": latest_version if latest_version else "none"
+            "version": version
         }
-        
         all_versions.append(version_entry)
-        
-        if latest_version:
-            print(f"Latest version for {repo_name} (GUID: {guid}): {latest_version}")
-            has_updates = True
     
     # Generate JSON file with all versions
     generate_versions_json(all_versions)
-    
-    if has_updates:
-        print(f"Updated versions for {len(all_versions)} mods")
-    else:
-        print("No versions found")
+    print(f"Generated version information for {len(all_versions)} mods")
 
 if __name__ == "__main__":
     main()
