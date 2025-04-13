@@ -29,10 +29,18 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python ./.github/scripts/check_releases.py
-          
+          python ./.github/scripts/check_releases.py          
+      
+      - name: Verify release_versions.json exists
+        run: |
+          if [ ! -f ./release_versions.json ]; then
+            echo "Error: release_versions.json not found!";
+            exit 1;
+          fi
+           
       - name: Upload release versions JSON as artifact
         uses: actions/upload-artifact@v3
         with:
           name: release-versions
           path: ./release_versions.json
+
