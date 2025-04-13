@@ -2,7 +2,9 @@
 
 Checks the version of BepInEx mods against their release versions on either GitHub or Thunderstore websites. 
 If there are any updates available for installed mods, a notification will pop up on game startup. 
-In the notification there is a button to visit the mod websites to download the available updates. 
+In the notification there is a button to visit the mod websites to download the available updates.  
+<br>
+Mod release versions are checked hourly at 20 minutes past the hour so there may be a lag from when a mod author publishes a release.  
 
 ![Screenshot of Updates Available Notification](https://github.com/bryon82/SailwindModVersionChecker/blob/main/Screenshots/ModVersionChecker.png)  
 
