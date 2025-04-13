@@ -49,7 +49,8 @@ jobs:
           fi
           
       - name: Upload release versions JSON as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: release-versions
           path: ./release_versions.json
+          overwrite: true
