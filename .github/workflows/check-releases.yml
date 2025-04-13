@@ -55,7 +55,7 @@ jobs:
           path: ./release_versions.json
           overwrite: true
 
-      - name: update file and push to remote
+      - name: Push release_versions.json
         run: |
             git config --global user.name "github-actions[bot]"
             git config --global user.email "github-actions[bot]@users.noreply.github.com"
