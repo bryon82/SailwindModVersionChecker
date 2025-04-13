@@ -1,4 +1,4 @@
-name: Check Repository Release Versions
+name: Check Release Versions
 
 on:
   schedule:
@@ -25,7 +25,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests PyGithub
 
-      - name: Check repository releases
+      - name: Check release versions
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
