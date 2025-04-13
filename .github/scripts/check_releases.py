@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
 Script to check for new releases in GitHub repositories and Thunderstore packages.
-Place this file in .github/scripts/check_releases.py
 """
 import os
 import json
@@ -36,7 +35,7 @@ def extract_thunderstore_info(package_url):
     """Extract community, author, and package name from a Thunderstore URL"""
     # or https://thunderstore.io/c/game/p/Author/PackageName/
     pattern = r"(?:https?://)?(?:www\.)?thunderstore\.io/c/([^/]+)/p/([^/]+)/([^/]+)/?.*"
-        
+
     match = re.match(pattern, package_url)
     if match:
         return {
@@ -44,7 +43,7 @@ def extract_thunderstore_info(package_url):
             "author": match.group(2),
             "package": match.group(3)
         }
-    
+
     return None
 
 def get_latest_github_release(repo_name, g):
@@ -64,7 +63,7 @@ def get_latest_thunderstore_version(package_info):
         author = package_info["author"]
         package = package_info["package"]
         url = f"{THUNDERSTORE_API_URL}/package/{author}/{package}/"
-        
+
         response = requests.get(url)
         if response.status_code == 200:
             package_data = response.json()
@@ -79,13 +78,13 @@ def get_latest_thunderstore_version(package_info):
 def generate_versions_json(versions_data):
     """Generate JSON file with guid and version fields for all mods"""
     versions_json = []
-    
+
     for item in versions_data:
         versions_json.append({
             "guid": item["guid"],
             "version": item["version"]
         })
-    
+
     with open(RELEASE_VERSIONS_FILE, "w") as f:
         json.dump(versions_json, f, indent=2)
 
@@ -94,20 +93,20 @@ def main():
     g = None
     if github_token:
         g = Github(github_token)
-    
+
     mods = load_mod_list()
     all_versions = []
-    
+
     for mod in mods:
         guid = mod.get("guid")
         repo_url = mod.get("repo")
-        
+
         if not guid or not repo_url:
             print(f"Skipping invalid mod entry: {mod}")
             continue
-        
+
         version = "none"
-        
+
         # Check if this is a GitHub repository
         repo_name = extract_repo_info(repo_url)
         if repo_name:
@@ -119,7 +118,7 @@ def main():
                     print(f"Latest GitHub version for {repo_name} (GUID: {guid}): {version}")
             else:
                 print("GITHUB_TOKEN not provided, skipping GitHub repository checks")
-        
+
         # Check if this is a Thunderstore package
         elif "thunderstore.io" in repo_url:
             package_info = extract_thunderstore_info(repo_url)
@@ -133,18 +132,17 @@ def main():
                     print(f"Latest Thunderstore version for {author}/{package} (GUID: {guid}): {version}")
             else:
                 print(f"Could not extract Thunderstore package info from URL: {repo_url}")
-        
+
         else:
             print(f"Unsupported repository URL format: {repo_url}")
-        
-        # Add to our versions list
+
         version_entry = {
             "guid": guid,
+            "repo": repo_url,
             "version": version
         }
         all_versions.append(version_entry)
-    
-    # Generate JSON file with all versions
+
     generate_versions_json(all_versions)
     print(f"Generated version information for {len(all_versions)} mods")
 
