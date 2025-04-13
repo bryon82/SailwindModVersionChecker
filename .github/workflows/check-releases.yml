@@ -2,7 +2,7 @@ name: Check Release Versions
 
 on:
   schedule:
-    # Runs at 8:00 AM UTC every day
+    # Runs every 30 minutes
     - cron: '0/30 * * * *'
   workflow_dispatch:
     # Allows manual triggering
@@ -24,23 +24,32 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install requests PyGithub
-
+      
       - name: Check release versions
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python ./.github/scripts/check_releases.py          
-      
+
+      - name: Debug file existence
+        run: |
+          if [ -f ./release_versions.json ]; then
+            echo "release_versions.json found";
+            cat ./release_versions.json;
+          else
+            echo "Error: release_versions.json not created!";
+            exit 1;
+          fi
+            
       - name: Verify release_versions.json exists
         run: |
           if [ ! -f ./release_versions.json ]; then
             echo "Error: release_versions.json not found!";
             exit 1;
           fi
-           
+          
       - name: Upload release versions JSON as artifact
         uses: actions/upload-artifact@v3
         with:
           name: release-versions
           path: ./release_versions.json
-
