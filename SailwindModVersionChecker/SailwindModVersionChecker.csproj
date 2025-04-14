@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ReleaseVersionResponse.cs" />
     <Compile Include="VisitWebsiteButton.cs" />
     <Compile Include="DismissButton.cs" />
     <Compile Include="Plugin.cs" />

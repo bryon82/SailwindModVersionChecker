@@ -12,38 +12,73 @@ namespace SailwindModVersionChecker
 {
     internal class VersionChecker
     {
-        internal static List<string> websites = new List<string>();
-        private static HttpClient _httpClient;
-
         const string modReleaseVersionsListurl = "https://raw.githubusercontent.com/bryon82/SailwindModVersionChecker/main/release_versions.json";
         const string githubWebsite = "https://github.com/";
         const string thunderstoreWebsite = "https://thunderstore.io/c/sailwind/p/";
 
-        internal static async Task Check(Dictionary<string, PluginInfo> pluginInfos)
+        internal static async Task<(string, List<string>)> Check(Dictionary<string, PluginInfo> pluginInfos)
         {
-            _httpClient = new HttpClient();
-            _httpClient.DefaultRequestHeaders.Add("User-Agent", "C# GitHub Content Fetcher");
+            if (pluginInfos == null || pluginInfos.Count == 0)
+            {
+                Plugin.logger.LogError("No plugins found to check for updates.");
+                return (null, null);
+            }
 
-            var modDict = new Dictionary<string, string>();
+            var latestReleaseList = new List<ReleaseVersionResponse>();
             var modList = await GetModVersionsList();
+            if (modList == null)
+            {
+                Plugin.logger.LogError("GetModVersionsList returned null");
+                return (null, null);
+            }
+
             foreach (JToken mod in modList)
             {
-                modDict.Add(mod["guid"].ToString(), Regex.Match(mod["version"].ToString(), @"(\d+\.\d+\.\d+)").Groups[1].Value);
+                if (mod == null) continue;
+
+                var guidProperty = mod["guid"];
+                var versionProperty = mod["version"];
+                var repoProperty = mod["repo"];
+
+                if (guidProperty == null || versionProperty == null || repoProperty == null)
+                {
+                    Plugin.logger.LogWarning("Skipping mod with missing properties");
+                    continue;
+                }
+
+                var versionString = versionProperty.ToString();
+                var versionMatch = Regex.Match(versionString, @"(\d+\.\d+\.\d+)");
+                if (!versionMatch.Success)
+                {
+                    Plugin.logger.LogWarning($"Skipping mod with invalid version format: {guidProperty} {versionString}");
+                    continue;
+                }
+
+                latestReleaseList.Add(new ReleaseVersionResponse
+                {
+                    guid = guidProperty.ToString(),
+                    version = versionMatch.Groups[1].Value,
+                    repo = repoProperty.ToString()
+                });                
             }
 
             var updates = "";
+            var websites = new List<string>();
             foreach (var plugin in pluginInfos)
             {
-                var metadata = plugin.Value.Metadata;
+                var metadata = plugin.Value?.Metadata;
+                if (metadata == null) continue;
+
                 var guid = metadata.GUID;
                 var version = metadata.Version.ToString();
 
-                if (!modDict.ContainsKey(guid) || modDict[guid] == null)
+                var latestRelease = latestReleaseList.FirstOrDefault(m => m.guid == guid);
+                if (latestRelease == null ||
+                    latestRelease.version.IsNullOrWhiteSpace() ||
+                    latestRelease.repo.IsNullOrWhiteSpace())
+                {
                     continue;
-
-                var latestVersion = modDict[guid];
-                if (latestVersion == null)
-                    continue;
+                }                    
 
                 Version vCurrent;
                 Version vLatest;
@@ -51,7 +86,7 @@ namespace SailwindModVersionChecker
                 try
                 {
                     vCurrent = new Version(version);
-                    vLatest = new Version(latestVersion);
+                    vLatest = new Version(latestRelease.version);
                 }
                 catch (ArgumentException e)
                 {
@@ -61,34 +96,33 @@ namespace SailwindModVersionChecker
 
                 if (vCurrent.CompareTo(vLatest) < 0)
                 {
-                    updates += $"{metadata.Name} {version} → {latestVersion}\n";
-                    Plugin.logger.LogInfo($"*Update Available*  {metadata.Name} {version} → {latestVersion}");
-                    var website = modList.FirstOrDefault(m => m["guid"].ToString() == guid)?["repo"]?.ToString();
-                    if (website.StartsWith(githubWebsite))
+                    updates += $"{metadata.Name} {version} → {latestRelease.version}\n";
+                    Plugin.logger.LogInfo($"*Update Available*  {metadata.Name} {version} → {latestRelease.version}");
+                    if (latestRelease.repo.StartsWith(githubWebsite))
                     {
-                        websites.Add($"{website}/releases/latest");
+                        websites.Add($"{latestRelease.repo}/releases/latest");
                     }
-                    else if (website.StartsWith(thunderstoreWebsite))
+                    else if (latestRelease.repo.StartsWith(thunderstoreWebsite))
                     {
-                        websites.Add(website);
+                        websites.Add(latestRelease.repo);
                     }
 
                     continue;
                 }
 
                 Plugin.logger.LogInfo($"{metadata.Name} is up to date");
-            }
+            }            
 
-            if (!updates.Equals("") && Plugin.enableNotification.Value)
-                UpdatesUI.ui.SetActive(true);
-            UpdatesUI.textMesh.text += updates;
-            UpdatesUI.websites = websites;
+            return (updates, websites);
         }
 
         internal static async Task<JArray> GetModVersionsList()
         {
             try
             {
+                HttpClient _httpClient = new HttpClient();
+                _httpClient.DefaultRequestHeaders.Add("User-Agent", "C# GitHub Content Fetcher");
+
                 HttpResponseMessage response = await _httpClient.GetAsync(modReleaseVersionsListurl);
                 response.EnsureSuccessStatusCode();
                 var jsonContent = await response.Content.ReadAsStringAsync();

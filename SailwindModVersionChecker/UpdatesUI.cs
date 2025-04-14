@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using BepInEx;
+using HarmonyLib;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,7 +33,7 @@ namespace SailwindModVersionChecker
             textMesh.lineSpacing = 1.1f;
             
             GameObject dismissButton = ui.transform.GetChild(1).gameObject;
-            GameObject visitWebsiteButton = GameObject.Instantiate(dismissButton, dismissButton.transform.parent);
+            GameObject visitWebsiteButton = Instantiate(dismissButton, dismissButton.transform.parent);
 
             dismissButton.name = "button dismiss";
             dismissButton.transform.localPosition = new Vector3(0.5f, -0.6f, 0f);
@@ -49,6 +50,14 @@ namespace SailwindModVersionChecker
             buttonGO = visitWebsiteButton.GetComponentInChildren<StartMenuButton>().gameObject;
             Destroy(buttonGO.GetComponent<StartMenuButton>());
             buttonGO.AddComponent<VisitWebsiteButton>().updatesUI = ui;
+        }
+
+        internal void ShowUpdatesUI((string updates, List<string> websites) updateInfo)
+        {
+            if (!updateInfo.updates.IsNullOrWhiteSpace())
+                ui.SetActive(true);
+            textMesh.text += updateInfo.updates;
+            websites = updateInfo.websites;
         }
     }
 }

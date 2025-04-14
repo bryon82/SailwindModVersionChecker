@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v1.2.2] - 2025-04-14
+
+### Updated
+- Code refactor for better handling of nulls
+
+### Fixed
+- Async error on startup caused by race condition if updates ui element is not instantiated in time 
+
 ## [v1.2.1] - 2025-04-14
 
 ### Fixed
