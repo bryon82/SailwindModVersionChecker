@@ -9,17 +9,17 @@ namespace SailwindModVersionChecker
 {
     [BepInPlugin(PLUGIN_GUID, PLUGIN_NAME, PLUGIN_VERSION)]
     public class Plugin : BaseUnityPlugin
-    {        
+    {
         public const string PLUGIN_GUID = "zzz.raddude82.modversionchecker";
         public const string PLUGIN_NAME = "ModVersionChecker";
-        public const string PLUGIN_VERSION = "1.2.0";
+        public const string PLUGIN_VERSION = "1.2.1";
 
         internal static ManualLogSource logger;
 
         internal static ConfigEntry<bool> enableNotification;
         internal static ConfigEntry<bool> enableVersionChecks;
 
-        private void Awake()
+        private async void Awake()
         {
             logger = Logger;
 
@@ -29,7 +29,7 @@ namespace SailwindModVersionChecker
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), PLUGIN_GUID);
 
             if (enableVersionChecks.Value)
-                VersionChecker.Check(Chainloader.PluginInfos);
+                await VersionChecker.Check(Chainloader.PluginInfos);
         }
     }
 }

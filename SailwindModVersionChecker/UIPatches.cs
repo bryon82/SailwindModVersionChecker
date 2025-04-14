@@ -9,11 +9,19 @@ namespace SailwindModVersionChecker
         {
             [HarmonyPrefix]
             [HarmonyPatch("Awake")]
-            private static void AddContinueUI(StartMenu __instance)
+            public static void AddContinueUI(StartMenu __instance)
             {
                 UpdatesUI.SetupUpdatesUI(__instance);
                 __instance.gameObject.AddComponent<UpdatesUI>();
-            }            
+            }
+
+            [HarmonyPrefix]
+            [HarmonyPatch("ButtonClick", new System.Type[] { typeof(StartMenuButtonType) })]
+            public static void HideUpdatesUI()
+            {
+                if(UpdatesUI.ui.activeInHierarchy)
+                    UpdatesUI.ui.SetActive(false);
+            }
         }
     }
 }

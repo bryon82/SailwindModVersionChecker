@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v1.2.1] - 2025-04-14
+
+### Fixed
+- Async error that would get sometimes thrown during startup
+- Mod updates notification persisting when clicking on one of the start menu buttons
+
 ## [v1.2.0] - 2025-04-13
 
 ### Changed

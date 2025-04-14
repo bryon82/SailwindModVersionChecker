@@ -19,7 +19,7 @@ namespace SailwindModVersionChecker
         const string githubWebsite = "https://github.com/";
         const string thunderstoreWebsite = "https://thunderstore.io/c/sailwind/p/";
 
-        internal static async void Check(Dictionary<string, PluginInfo> pluginInfos)
+        internal static async Task Check(Dictionary<string, PluginInfo> pluginInfos)
         {
             _httpClient = new HttpClient();
             _httpClient.DefaultRequestHeaders.Add("User-Agent", "C# GitHub Content Fetcher");
