@@ -62,7 +62,7 @@
   {
     "guid": "com.nandbrew.nandfixes",
     "repo": "https://github.com/NANDbrew/NANDFixes",
-    "version": "v1.2.1"
+    "version": "v1.2.2"
   },
   {
     "guid": "com.nandbrew.shipyardexpansion",
@@ -82,7 +82,7 @@
   {
     "guid": "com.nandbrew.anchorimprovements",
     "repo": "https://github.com/NANDbrew/AnchorImprovements",
-    "version": "v1.1.6"
+    "version": "v1.1.7"
   },
   {
     "guid": "com.nandbrew.furniturefix",
