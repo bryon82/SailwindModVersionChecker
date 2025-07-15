@@ -15,6 +15,11 @@
     "version": "v1.2.1"
   },
   {
+    "guid": "com.raddude82.bitsandbobsradredux",
+    "repo": "https://github.com/bryon82/SailwindBitsAndBobsRadRedux",
+    "version": "v1.0.0"
+  },
+  {
     "guid": "com.raddude82.modsavebackups",
     "repo": "https://github.com/bryon82/ModSaveBackups",
     "version": "v1.1.1"
