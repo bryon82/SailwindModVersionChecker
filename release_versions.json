@@ -67,7 +67,7 @@
   {
     "guid": "com.nandbrew.nandfixes",
     "repo": "https://github.com/NANDbrew/NANDFixes",
-    "version": "v1.2.3"
+    "version": "v1.2.4"
   },
   {
     "guid": "com.nandbrew.shipyardexpansion",
@@ -82,7 +82,7 @@
   {
     "guid": "com.nandbrew.nandtweaks",
     "repo": "https://github.com/NANDbrew/NANDTweaks",
-    "version": "v1.5.1"
+    "version": "v1.5.2"
   },
   {
     "guid": "com.nandbrew.anchorimprovements",
