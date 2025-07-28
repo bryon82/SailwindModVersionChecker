@@ -28,6 +28,14 @@
         "repo": "https://github.com/bryon82/SailwindRadRefinements"
     },
     {
+        "guid": "com.raddude82.economicevents",
+        "repo": "https://github.com/bryon82/SailwindEconomicEvents"
+    },
+    {
+        "guid": "com.raddude82.betterfishing",
+        "repo": "https://github.com/bryon82/SailwindBetterFishing"
+    },
+    {
         "guid": "pr0skynesis.cookedinfo",
         "repo": "https://github.com/alesparise/CookedInfo-Sailwind-Mod"
     },
