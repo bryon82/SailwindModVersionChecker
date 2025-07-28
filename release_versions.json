@@ -35,6 +35,16 @@
     "version": "v1.1.0"
   },
   {
+    "guid": "com.raddude82.economicevents",
+    "repo": "https://github.com/bryon82/SailwindEconomicEvents",
+    "version": "v1.0.0"
+  },
+  {
+    "guid": "com.raddude82.betterfishing",
+    "repo": "https://github.com/bryon82/SailwindBetterFishing",
+    "version": "v1.0.0"
+  },
+  {
     "guid": "pr0skynesis.cookedinfo",
     "repo": "https://github.com/alesparise/CookedInfo-Sailwind-Mod",
     "version": "v1.2.3"
