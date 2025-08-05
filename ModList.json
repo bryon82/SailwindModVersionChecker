@@ -34,6 +34,10 @@
     {
         "guid": "com.raddude82.betterfishing",
         "repo": "https://github.com/bryon82/SailwindBetterFishing"
+    },    
+    {
+        "guid": "com.raddude82.hookshangmore",
+        "repo": "https://github.com/bryon82/SailwindHooksHangMore"
     },
     {
         "guid": "pr0skynesis.cookedinfo",
