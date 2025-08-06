@@ -7,7 +7,7 @@
   {
     "guid": "com.raddude82.sailadex",
     "repo": "https://github.com/bryon82/Sail-a-dex",
-    "version": "v1.5.4"
+    "version": "v1.5.5"
   },
   {
     "guid": "com.raddude82.randomencounters",
@@ -32,7 +32,7 @@
   {
     "guid": "com.raddude82.radrefinements",
     "repo": "https://github.com/bryon82/SailwindRadRefinements",
-    "version": "v1.1.0"
+    "version": "v1.1.1"
   },
   {
     "guid": "com.raddude82.economicevents",
