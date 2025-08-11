@@ -40,6 +40,10 @@
         "repo": "https://github.com/bryon82/SailwindHooksHangMore"
     },
     {
+        "guid": "com.bepis.bepinex.configurationmanager",
+        "repo": "https://github.com/BepInEx/BepInEx.ConfigurationManager"
+    },
+    {
         "guid": "pr0skynesis.cookedinfo",
         "repo": "https://github.com/alesparise/CookedInfo-Sailwind-Mod"
     },
