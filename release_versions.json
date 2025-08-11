@@ -50,6 +50,11 @@
     "version": "v1.0.3"
   },
   {
+    "guid": "com.bepis.bepinex.configurationmanager",
+    "repo": "https://github.com/BepInEx/BepInEx.ConfigurationManager",
+    "version": "v18.4.1"
+  },
+  {
     "guid": "pr0skynesis.cookedinfo",
     "repo": "https://github.com/alesparise/CookedInfo-Sailwind-Mod",
     "version": "v1.2.3"
