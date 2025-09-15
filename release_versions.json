@@ -7,7 +7,7 @@
   {
     "guid": "com.raddude82.sailadex",
     "repo": "https://github.com/bryon82/Sail-a-dex",
-    "version": "v1.5.7"
+    "version": "v1.5.8"
   },
   {
     "guid": "com.raddude82.randomencounters",
@@ -32,12 +32,12 @@
   {
     "guid": "com.raddude82.radrefinements",
     "repo": "https://github.com/bryon82/SailwindRadRefinements",
-    "version": "v1.1.3"
+    "version": "v1.1.4"
   },
   {
     "guid": "com.raddude82.economicevents",
     "repo": "https://github.com/bryon82/SailwindEconomicEvents",
-    "version": "v1.0.0"
+    "version": "v1.0.1"
   },
   {
     "guid": "com.raddude82.betterfishing",
@@ -47,7 +47,7 @@
   {
     "guid": "com.raddude82.hookshangmore",
     "repo": "https://github.com/bryon82/SailwindHooksHangMore",
-    "version": "v1.0.5"
+    "version": "v1.0.6"
   },
   {
     "guid": "com.bepis.bepinex.configurationmanager",
