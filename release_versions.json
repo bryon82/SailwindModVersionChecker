@@ -2,12 +2,12 @@
   {
     "guid": "zzz.raddude82.modversionchecker",
     "repo": "https://github.com/bryon82/SailwindModVersionChecker",
-    "version": "none"
+    "version": "v1.2.2"
   },
   {
     "guid": "com.raddude82.sailadex",
     "repo": "https://github.com/bryon82/Sail-a-dex",
-    "version": "none"
+    "version": "v1.5.9"
   },
   {
     "guid": "com.raddude82.randomencounters",
@@ -17,12 +17,12 @@
   {
     "guid": "com.raddude82.bitsandbobsradredux",
     "repo": "https://github.com/bryon82/SailwindBitsAndBobsRadRedux",
-    "version": "none"
+    "version": "v1.0.1"
   },
   {
     "guid": "com.raddude82.modsavebackups",
     "repo": "https://github.com/bryon82/ModSaveBackups",
-    "version": "none"
+    "version": "v1.1.1"
   },
   {
     "guid": "com.raddude82.radfixes",
@@ -37,17 +37,17 @@
   {
     "guid": "com.raddude82.economicevents",
     "repo": "https://github.com/bryon82/SailwindEconomicEvents",
-    "version": "none"
+    "version": "v1.0.1"
   },
   {
     "guid": "com.raddude82.betterfishing",
     "repo": "https://github.com/bryon82/SailwindBetterFishing",
-    "version": "none"
+    "version": "v1.2.2"
   },
   {
     "guid": "com.raddude82.hookshangmore",
     "repo": "https://github.com/bryon82/SailwindHooksHangMore",
-    "version": "none"
+    "version": "v1.0.6"
   },
   {
     "guid": "com.bepis.bepinex.configurationmanager",
@@ -82,12 +82,12 @@
   {
     "guid": "pr0skynesis.shipyardcodes",
     "repo": "https://github.com/alesparise/ShipyardCodes-Sailwind-Mod",
-    "version": "none"
+    "version": "v1.0.0"
   },
   {
     "guid": "com.nandbrew.nandfixes",
     "repo": "https://github.com/NANDbrew/NANDFixes",
-    "version": "none"
+    "version": "v1.3.0"
   },
   {
     "guid": "com.nandbrew.shipyardexpansion",
@@ -107,7 +107,7 @@
   {
     "guid": "com.nandbrew.anchorimprovements",
     "repo": "https://github.com/NANDbrew/AnchorImprovements",
-    "version": "none"
+    "version": "v1.1.8"
   },
   {
     "guid": "com.nandbrew.furniturefix",
@@ -117,7 +117,7 @@
   {
     "guid": "com.nandbrew.sailwinddifficulty",
     "repo": "https://github.com/NANDbrew/SailwindDifficulty",
-    "version": "none"
+    "version": "v1.1.1"
   },
   {
     "guid": "com.nandbrew.PortableSaves",
@@ -162,12 +162,12 @@
   {
     "guid": "com.nandbrew.simpletides",
     "repo": "https://github.com/NANDbrew/SimpleTides",
-    "version": "none"
+    "version": "v1.0.2"
   },
   {
     "guid": "com.TheOriginOfAllEvil.ShatteredSeas",
     "repo": "https://github.com/TheOriginOfAllEvil/Shattered-Seas-Expansion",
-    "version": "none"
+    "version": "b1.2.7"
   },
   {
     "guid": "com.TheOriginOfAllEvil.ImprovedHorizon",
@@ -177,7 +177,7 @@
   {
     "guid": "com.TheOriginOfAllEvil.ClipperCleaner",
     "repo": "https://github.com/TheOriginOfAllEvil/Shattered-Seas-Cleaner",
-    "version": "none"
+    "version": "1.0.0"
   },
   {
     "guid": "com.app24.coordinateviewer",
@@ -187,7 +187,7 @@
   {
     "guid": "com.jakeinaboat.cargocontroller",
     "repo": "https://github.com/JakeInABoat/SailwindCargoController",
-    "version": "none"
+    "version": "v0.3.1"
   },
   {
     "guid": "com.yourname.sailwind.sealifeplugin",
