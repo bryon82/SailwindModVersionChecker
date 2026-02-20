@@ -87,12 +87,12 @@
   {
     "guid": "com.nandbrew.nandfixes",
     "repo": "https://github.com/NANDbrew/NANDFixes",
-    "version": "v1.3.0"
+    "version": "v1.3.1"
   },
   {
     "guid": "com.nandbrew.shipyardexpansion",
     "repo": "https://github.com/NANDbrew/ShipyardExpansion",
-    "version": "v0.8.0"
+    "version": "v0.8.1"
   },
   {
     "guid": "com.nandbrew.savecleaner",
