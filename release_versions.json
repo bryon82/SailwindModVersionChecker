@@ -42,12 +42,12 @@
   {
     "guid": "com.raddude82.betterfishing",
     "repo": "https://github.com/bryon82/SailwindBetterFishing",
-    "version": "v1.2.2"
+    "version": "v1.3.0"
   },
   {
     "guid": "com.raddude82.hookshangmore",
     "repo": "https://github.com/bryon82/SailwindHooksHangMore",
-    "version": "v1.0.6"
+    "version": "v1.0.7"
   },
   {
     "guid": "com.bepis.bepinex.configurationmanager",
