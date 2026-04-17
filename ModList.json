@@ -132,6 +132,18 @@
         "repo": "https://github.com/NANDbrew/SimpleTides"
     },
     {
+        "guid": "com.nandbrew.nandcommand",
+        "repo": "https://github.com/NANDbrew/NANDCommand"
+    },
+    {
+        "guid": "com.nandbrew.SWTimeScale",
+        "repo": "https://github.com/NANDbrew/TimeScale"
+    },
+    {
+        "guid": "com.nandbrew.boatdamagefix",
+        "repo": "https://github.com/NANDbrew/BoatUpdateHack"
+    },
+    {
         "guid": "com.TheOriginOfAllEvil.ShatteredSeas",
         "repo": "https://github.com/TheOriginOfAllEvil/Shattered-Seas-Expansion"
     },
@@ -154,5 +166,13 @@
     {
         "guid": "com.yourname.sailwind.sealifeplugin",
         "repo": "https://github.com/BryanP-JP19/SailwindSeaLifeMod"
+    },
+    {
+        "guid": "com.kerseb.AutoSails",
+        "repo": "https://github.com/kerseb/AutoSails"
+    },
+    {
+        "guid": "com.kerseb.AutoPilot",
+        "repo": "https://github.com/kerseb/AutoPilot"
     }
 ]
