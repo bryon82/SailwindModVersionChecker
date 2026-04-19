@@ -34,7 +34,7 @@
     {
         "guid": "com.raddude82.betterfishing",
         "repo": "https://github.com/bryon82/SailwindBetterFishing"
-    },    
+    },
     {
         "guid": "com.raddude82.hookshangmore",
         "repo": "https://github.com/bryon82/SailwindHooksHangMore"
@@ -174,5 +174,9 @@
     {
         "guid": "com.kerseb.AutoPilot",
         "repo": "https://github.com/kerseb/AutoPilot"
+    },
+    {
+        "guid": "com.zallek.sailwindregatta",
+        "repo": "https://github.com/zallek/sailwind-regatta"
     }
 ]
