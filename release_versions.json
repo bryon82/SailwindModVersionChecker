@@ -218,5 +218,10 @@
     "guid": "com.kerseb.AutoPilot",
     "repo": "https://github.com/kerseb/AutoPilot",
     "version": "none"
+  },
+  {
+    "guid": "com.zallek.sailwindregatta",
+    "repo": "https://github.com/zallek/sailwind-regatta",
+    "version": "0.2.0"
   }
 ]
