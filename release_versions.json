@@ -2,12 +2,12 @@
   {
     "guid": "zzz.raddude82.modversionchecker",
     "repo": "https://github.com/bryon82/SailwindModVersionChecker",
-    "version": "v1.2.2"
+    "version": "none"
   },
   {
     "guid": "com.raddude82.sailadex",
     "repo": "https://github.com/bryon82/Sail-a-dex",
-    "version": "v1.5.12"
+    "version": "none"
   },
   {
     "guid": "com.raddude82.randomencounters",
@@ -32,7 +32,7 @@
   {
     "guid": "com.raddude82.radrefinements",
     "repo": "https://github.com/bryon82/SailwindRadRefinements",
-    "version": "none"
+    "version": "v1.1.4"
   },
   {
     "guid": "com.raddude82.economicevents",
@@ -52,7 +52,7 @@
   {
     "guid": "com.bepis.bepinex.configurationmanager",
     "repo": "https://github.com/BepInEx/BepInEx.ConfigurationManager",
-    "version": "none"
+    "version": "v18.4.1"
   },
   {
     "guid": "pr0skynesis.cookedinfo",
@@ -97,12 +97,12 @@
   {
     "guid": "com.nandbrew.savecleaner",
     "repo": "https://github.com/NANDbrew/SaveCleaner",
-    "version": "none"
+    "version": "v0.3.1"
   },
   {
     "guid": "com.nandbrew.nandtweaks",
     "repo": "https://github.com/NANDbrew/NANDTweaks",
-    "version": "none"
+    "version": "1.7.1a"
   },
   {
     "guid": "com.nandbrew.anchorimprovements",
@@ -117,7 +117,7 @@
   {
     "guid": "com.nandbrew.sailwinddifficulty",
     "repo": "https://github.com/NANDbrew/SailwindDifficulty",
-    "version": "none"
+    "version": "v1.1.1"
   },
   {
     "guid": "com.nandbrew.PortableSaves",
@@ -137,7 +137,7 @@
   {
     "guid": "com.nandbrew.dynamiclights",
     "repo": "https://github.com/NANDbrew/DynamicLights",
-    "version": "none"
+    "version": "v0.3.1"
   },
   {
     "guid": "com.nandbrew.missionrework",
@@ -162,7 +162,7 @@
   {
     "guid": "com.nandbrew.simpletides",
     "repo": "https://github.com/NANDbrew/SimpleTides",
-    "version": "none"
+    "version": "v1.1.0"
   },
   {
     "guid": "com.nandbrew.nandcommand",
@@ -172,12 +172,12 @@
   {
     "guid": "com.nandbrew.SWTimeScale",
     "repo": "https://github.com/NANDbrew/TimeScale",
-    "version": "v1.0.2"
+    "version": "none"
   },
   {
     "guid": "com.nandbrew.boatdamagefix",
     "repo": "https://github.com/NANDbrew/BoatUpdateHack",
-    "version": "none"
+    "version": "v1.1.0"
   },
   {
     "guid": "com.TheOriginOfAllEvil.ShatteredSeas",
@@ -192,7 +192,7 @@
   {
     "guid": "com.TheOriginOfAllEvil.ClipperCleaner",
     "repo": "https://github.com/TheOriginOfAllEvil/Shattered-Seas-Cleaner",
-    "version": "1.0.0"
+    "version": "none"
   },
   {
     "guid": "com.app24.coordinateviewer",
