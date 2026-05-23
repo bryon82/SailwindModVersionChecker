@@ -7,7 +7,7 @@
   {
     "guid": "com.raddude82.sailadex",
     "repo": "https://github.com/bryon82/Sail-a-dex",
-    "version": "v1.5.12"
+    "version": "none"
   },
   {
     "guid": "com.raddude82.randomencounters",
@@ -27,7 +27,7 @@
   {
     "guid": "com.raddude82.radfixes",
     "repo": "https://github.com/bryon82/RadFixes",
-    "version": "v1.2.0"
+    "version": "none"
   },
   {
     "guid": "com.raddude82.radrefinements",
@@ -37,7 +37,7 @@
   {
     "guid": "com.raddude82.economicevents",
     "repo": "https://github.com/bryon82/SailwindEconomicEvents",
-    "version": "v1.0.3"
+    "version": "none"
   },
   {
     "guid": "com.raddude82.betterfishing",
@@ -57,7 +57,7 @@
   {
     "guid": "pr0skynesis.cookedinfo",
     "repo": "https://github.com/alesparise/CookedInfo-Sailwind-Mod",
-    "version": "v1.2.3"
+    "version": "none"
   },
   {
     "guid": "pr0skynesis.dinghies",
@@ -127,7 +127,7 @@
   {
     "guid": "com.nandbrew.towableboats",
     "repo": "https://github.com/NANDbrew/TowableBoats",
-    "version": "v0.2.5"
+    "version": "none"
   },
   {
     "guid": "com.nandbrew.boatcolors",
@@ -162,12 +162,12 @@
   {
     "guid": "com.nandbrew.simpletides",
     "repo": "https://github.com/NANDbrew/SimpleTides",
-    "version": "v1.1.0"
+    "version": "none"
   },
   {
     "guid": "com.nandbrew.nandcommand",
     "repo": "https://github.com/NANDbrew/NANDCommand",
-    "version": "v1.0.8"
+    "version": "none"
   },
   {
     "guid": "com.nandbrew.SWTimeScale",
@@ -177,7 +177,7 @@
   {
     "guid": "com.nandbrew.boatdamagefix",
     "repo": "https://github.com/NANDbrew/BoatUpdateHack",
-    "version": "v1.1.0"
+    "version": "none"
   },
   {
     "guid": "com.TheOriginOfAllEvil.ShatteredSeas",
@@ -187,7 +187,7 @@
   {
     "guid": "com.TheOriginOfAllEvil.ImprovedHorizon",
     "repo": "https://github.com/TheOriginOfAllEvil/ImprovedHorizonSailwind",
-    "version": "v1.3.0"
+    "version": "none"
   },
   {
     "guid": "com.TheOriginOfAllEvil.ClipperCleaner",
@@ -207,7 +207,7 @@
   {
     "guid": "com.yourname.sailwind.sealifeplugin",
     "repo": "https://github.com/BryanP-JP19/SailwindSeaLifeMod",
-    "version": "release"
+    "version": "none"
   },
   {
     "guid": "com.kerseb.AutoSails",
