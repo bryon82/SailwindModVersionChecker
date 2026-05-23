@@ -2,12 +2,12 @@
   {
     "guid": "zzz.raddude82.modversionchecker",
     "repo": "https://github.com/bryon82/SailwindModVersionChecker",
-    "version": "none"
+    "version": "v1.2.2"
   },
   {
     "guid": "com.raddude82.sailadex",
     "repo": "https://github.com/bryon82/Sail-a-dex",
-    "version": "none"
+    "version": "v1.5.12"
   },
   {
     "guid": "com.raddude82.randomencounters",
@@ -57,7 +57,7 @@
   {
     "guid": "pr0skynesis.cookedinfo",
     "repo": "https://github.com/alesparise/CookedInfo-Sailwind-Mod",
-    "version": "none"
+    "version": "v1.2.3"
   },
   {
     "guid": "pr0skynesis.dinghies",
@@ -172,7 +172,7 @@
   {
     "guid": "com.nandbrew.SWTimeScale",
     "repo": "https://github.com/NANDbrew/TimeScale",
-    "version": "none"
+    "version": "v1.0.2"
   },
   {
     "guid": "com.nandbrew.boatdamagefix",
@@ -192,7 +192,7 @@
   {
     "guid": "com.TheOriginOfAllEvil.ClipperCleaner",
     "repo": "https://github.com/TheOriginOfAllEvil/Shattered-Seas-Cleaner",
-    "version": "none"
+    "version": "1.0.0"
   },
   {
     "guid": "com.app24.coordinateviewer",
@@ -202,7 +202,7 @@
   {
     "guid": "com.jakeinaboat.cargocontroller",
     "repo": "https://github.com/JakeInABoat/SailwindCargoController",
-    "version": "none"
+    "version": "v0.3.1"
   },
   {
     "guid": "com.yourname.sailwind.sealifeplugin",
