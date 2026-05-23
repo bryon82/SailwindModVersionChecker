@@ -7,7 +7,7 @@
   {
     "guid": "com.raddude82.sailadex",
     "repo": "https://github.com/bryon82/Sail-a-dex",
-    "version": "none"
+    "version": "v1.5.12"
   },
   {
     "guid": "com.raddude82.randomencounters",
@@ -27,17 +27,17 @@
   {
     "guid": "com.raddude82.radfixes",
     "repo": "https://github.com/bryon82/RadFixes",
-    "version": "none"
+    "version": "v1.2.0"
   },
   {
     "guid": "com.raddude82.radrefinements",
     "repo": "https://github.com/bryon82/SailwindRadRefinements",
-    "version": "v1.1.4"
+    "version": "none"
   },
   {
     "guid": "com.raddude82.economicevents",
     "repo": "https://github.com/bryon82/SailwindEconomicEvents",
-    "version": "none"
+    "version": "v1.0.3"
   },
   {
     "guid": "com.raddude82.betterfishing",
@@ -52,7 +52,7 @@
   {
     "guid": "com.bepis.bepinex.configurationmanager",
     "repo": "https://github.com/BepInEx/BepInEx.ConfigurationManager",
-    "version": "v18.4.1"
+    "version": "none"
   },
   {
     "guid": "pr0skynesis.cookedinfo",
@@ -97,12 +97,12 @@
   {
     "guid": "com.nandbrew.savecleaner",
     "repo": "https://github.com/NANDbrew/SaveCleaner",
-    "version": "v0.3.1"
+    "version": "none"
   },
   {
     "guid": "com.nandbrew.nandtweaks",
     "repo": "https://github.com/NANDbrew/NANDTweaks",
-    "version": "1.7.1a"
+    "version": "none"
   },
   {
     "guid": "com.nandbrew.anchorimprovements",
@@ -117,7 +117,7 @@
   {
     "guid": "com.nandbrew.sailwinddifficulty",
     "repo": "https://github.com/NANDbrew/SailwindDifficulty",
-    "version": "v1.1.1"
+    "version": "none"
   },
   {
     "guid": "com.nandbrew.PortableSaves",
@@ -127,7 +127,7 @@
   {
     "guid": "com.nandbrew.towableboats",
     "repo": "https://github.com/NANDbrew/TowableBoats",
-    "version": "none"
+    "version": "v0.2.5"
   },
   {
     "guid": "com.nandbrew.boatcolors",
@@ -137,7 +137,7 @@
   {
     "guid": "com.nandbrew.dynamiclights",
     "repo": "https://github.com/NANDbrew/DynamicLights",
-    "version": "v0.3.1"
+    "version": "none"
   },
   {
     "guid": "com.nandbrew.missionrework",
@@ -167,7 +167,7 @@
   {
     "guid": "com.nandbrew.nandcommand",
     "repo": "https://github.com/NANDbrew/NANDCommand",
-    "version": "none"
+    "version": "v1.0.8"
   },
   {
     "guid": "com.nandbrew.SWTimeScale",
@@ -187,7 +187,7 @@
   {
     "guid": "com.TheOriginOfAllEvil.ImprovedHorizon",
     "repo": "https://github.com/TheOriginOfAllEvil/ImprovedHorizonSailwind",
-    "version": "none"
+    "version": "v1.3.0"
   },
   {
     "guid": "com.TheOriginOfAllEvil.ClipperCleaner",
@@ -202,12 +202,12 @@
   {
     "guid": "com.jakeinaboat.cargocontroller",
     "repo": "https://github.com/JakeInABoat/SailwindCargoController",
-    "version": "v0.3.1"
+    "version": "none"
   },
   {
     "guid": "com.yourname.sailwind.sealifeplugin",
     "repo": "https://github.com/BryanP-JP19/SailwindSeaLifeMod",
-    "version": "none"
+    "version": "release"
   },
   {
     "guid": "com.kerseb.AutoSails",
