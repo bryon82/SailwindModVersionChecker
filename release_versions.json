@@ -50,6 +50,11 @@
     "version": "v1.0.9"
   },
   {
+    "guid": "com.raddude82.moresaveslots",
+    "repo": "https://github.com/bryon82/SailwindMoreSaveSlots",
+    "version": "v1.0.0"
+  },
+  {
     "guid": "com.bepis.bepinex.configurationmanager",
     "repo": "https://github.com/BepInEx/BepInEx.ConfigurationManager",
     "version": "v18.4.1"
@@ -102,7 +107,7 @@
   {
     "guid": "com.nandbrew.nandtweaks",
     "repo": "https://github.com/NANDbrew/NANDTweaks",
-    "version": "v1.7.3"
+    "version": "v1.7.4"
   },
   {
     "guid": "com.nandbrew.anchorimprovements",
