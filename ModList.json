@@ -40,6 +40,10 @@
         "repo": "https://github.com/bryon82/SailwindHooksHangMore"
     },
     {
+        "guid": "com.raddude82.moresaveslots",
+        "repo": "https://github.com/bryon82/SailwindMoreSaveSlots"
+    },
+    {
         "guid": "com.bepis.bepinex.configurationmanager",
         "repo": "https://github.com/BepInEx/BepInEx.ConfigurationManager"
     },
