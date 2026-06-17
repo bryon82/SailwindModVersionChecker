@@ -5,11 +5,11 @@
     },
     {
         "guid": "com.raddude82.sailadex",
-        "repo": "https://github.com/bryon82/Sail-a-dex"
+        "repo": "https://github.com/bryon82/SailwindSail-a-dex"
     },
     {
         "guid": "com.raddude82.randomencounters",
-        "repo": "https://github.com/bryon82/RandomEncounters"
+        "repo": "https://github.com/bryon82/SailwindRandomEncounters"
     },
     {
         "guid": "com.raddude82.bitsandbobsradredux",
@@ -17,11 +17,11 @@
     },
     {
         "guid": "com.raddude82.modsavebackups",
-        "repo": "https://github.com/bryon82/ModSaveBackups"
+        "repo": "https://github.com/bryon82/SailwindModSaveBackups"
     },
     {
         "guid": "com.raddude82.radfixes",
-        "repo": "https://github.com/bryon82/RadFixes"
+        "repo": "https://github.com/bryon82/SailwindRadFixes"
     },
     {
         "guid": "com.raddude82.radrefinements",
