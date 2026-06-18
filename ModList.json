@@ -44,6 +44,10 @@
         "repo": "https://github.com/bryon82/SailwindSaveSlotsPlus"
     },
     {
+        "guid": "com.raddude.moresaveslots",
+        "repo": "https://github.com/bryon82/SailwindSaveSlotsPlus"
+    },
+    {
         "guid": "com.bepis.bepinex.configurationmanager",
         "repo": "https://github.com/BepInEx/BepInEx.ConfigurationManager"
     },
