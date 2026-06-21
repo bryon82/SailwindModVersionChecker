@@ -7,7 +7,7 @@
   {
     "guid": "com.raddude82.sailadex",
     "repo": "https://github.com/bryon82/SailwindSail-a-dex",
-    "version": "v1.6.0"
+    "version": "v1.7.0"
   },
   {
     "guid": "com.raddude82.randomencounters",
@@ -22,7 +22,7 @@
   {
     "guid": "com.raddude82.modsavebackups",
     "repo": "https://github.com/bryon82/SailwindModSaveBackups",
-    "version": "v1.1.1"
+    "version": "v1.2.0"
   },
   {
     "guid": "com.raddude82.radfixes",
@@ -32,12 +32,12 @@
   {
     "guid": "com.raddude82.radrefinements",
     "repo": "https://github.com/bryon82/SailwindRadRefinements",
-    "version": "v1.3.0"
+    "version": "v1.4.0"
   },
   {
     "guid": "com.raddude82.economicevents",
     "repo": "https://github.com/bryon82/SailwindEconomicEvents",
-    "version": "v1.1.1"
+    "version": "v1.2.0"
   },
   {
     "guid": "com.raddude82.betterfishing",
@@ -52,12 +52,12 @@
   {
     "guid": "com.raddude82.saveslotsplus",
     "repo": "https://github.com/bryon82/SailwindSaveSlotsPlus",
-    "version": "v2.1.0"
+    "version": "v2.2.1"
   },
   {
     "guid": "com.raddude.moresaveslots",
     "repo": "https://github.com/bryon82/SailwindSaveSlotsPlus",
-    "version": "v2.1.0"
+    "version": "v2.2.1"
   },
   {
     "guid": "com.bepis.bepinex.configurationmanager",
@@ -132,7 +132,7 @@
   {
     "guid": "com.nandbrew.PortableSaves",
     "repo": "https://github.com/NANDbrew/PortableSaves",
-    "version": "v1.0.0"
+    "version": "v1.1.0"
   },
   {
     "guid": "com.nandbrew.towableboats",
