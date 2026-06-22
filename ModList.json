@@ -1,43 +1,87 @@
 [
     {
+        "guid": "zzz.raddude.modversionchecker",
+        "repo": "https://github.com/bryon82/SailwindModVersionChecker"
+    },
+    {
         "guid": "zzz.raddude82.modversionchecker",
         "repo": "https://github.com/bryon82/SailwindModVersionChecker"
+    },
+    {
+        "guid": "com.raddude.sailadex",
+        "repo": "https://github.com/bryon82/SailwindSail-a-dex"
     },
     {
         "guid": "com.raddude82.sailadex",
         "repo": "https://github.com/bryon82/SailwindSail-a-dex"
     },
     {
+        "guid": "com.raddude.randomencounters",
+        "repo": "https://github.com/bryon82/SailwindRandomEncounters"
+    },
+    {
         "guid": "com.raddude82.randomencounters",
         "repo": "https://github.com/bryon82/SailwindRandomEncounters"
+    },
+    {
+        "guid": "com.raddude.bitsandbobsradredux",
+        "repo": "https://github.com/bryon82/SailwindBitsAndBobsRadRedux"
     },
     {
         "guid": "com.raddude82.bitsandbobsradredux",
         "repo": "https://github.com/bryon82/SailwindBitsAndBobsRadRedux"
     },
     {
+        "guid": "com.raddude.modsavebackups",
+        "repo": "https://github.com/bryon82/SailwindModSaveBackups"
+    },
+    {
         "guid": "com.raddude82.modsavebackups",
         "repo": "https://github.com/bryon82/SailwindModSaveBackups"
     },
     {
+        "guid": "com.raddude.radfixes",
+        "repo": "https://github.com/bryon82/SailwindRadFixes"
+    },
+    {
         "guid": "com.raddude82.radfixes",
         "repo": "https://github.com/bryon82/SailwindRadFixes"
+    },    
+    {
+        "guid": "com.raddude.radrefinements",
+        "repo": "https://github.com/bryon82/SailwindRadRefinements"
     },
     {
         "guid": "com.raddude82.radrefinements",
         "repo": "https://github.com/bryon82/SailwindRadRefinements"
     },
     {
+        "guid": "com.raddude.economicevents",
+        "repo": "https://github.com/bryon82/SailwindEconomicEvents"
+    },
+    {
         "guid": "com.raddude82.economicevents",
         "repo": "https://github.com/bryon82/SailwindEconomicEvents"
+    },
+    {
+        "guid": "com.raddude.betterfishing",
+        "repo": "https://github.com/bryon82/SailwindBetterFishing"
     },
     {
         "guid": "com.raddude82.betterfishing",
         "repo": "https://github.com/bryon82/SailwindBetterFishing"
     },
     {
+        "guid": "com.raddude.hookshangmore",
+        "repo": "https://github.com/bryon82/SailwindHooksHangMore"
+    },
+    {
         "guid": "com.raddude82.hookshangmore",
         "repo": "https://github.com/bryon82/SailwindHooksHangMore"
+    },
+    {
+        "guid": "com.raddude.saveslotsplus",
+        "repo": "https://github.com/bryon82/SailwindSaveSlotsPlus"
     },
     {
         "guid": "com.raddude82.saveslotsplus",
