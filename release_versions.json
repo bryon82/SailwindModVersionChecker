@@ -22,12 +22,12 @@
   {
     "guid": "com.raddude.randomencounters",
     "repo": "https://github.com/bryon82/SailwindRandomEncounters",
-    "version": "v1.4.0"
+    "version": "v1.4.1"
   },
   {
     "guid": "com.raddude82.randomencounters",
     "repo": "https://github.com/bryon82/SailwindRandomEncounters",
-    "version": "v1.4.0"
+    "version": "v1.4.1"
   },
   {
     "guid": "com.raddude.bitsandbobsradredux",
@@ -92,12 +92,12 @@
   {
     "guid": "com.raddude.hookshangmore",
     "repo": "https://github.com/bryon82/SailwindHooksHangMore",
-    "version": "v1.0.9"
+    "version": "v2.0.0"
   },
   {
     "guid": "com.raddude82.hookshangmore",
     "repo": "https://github.com/bryon82/SailwindHooksHangMore",
-    "version": "v1.0.9"
+    "version": "v2.0.0"
   },
   {
     "guid": "com.raddude.saveslotsplus",
