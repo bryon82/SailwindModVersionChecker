@@ -12,12 +12,12 @@
   {
     "guid": "com.raddude.sailadex",
     "repo": "https://github.com/bryon82/SailwindSail-a-dex",
-    "version": "v1.8.0"
+    "version": "v1.8.1"
   },
   {
     "guid": "com.raddude82.sailadex",
     "repo": "https://github.com/bryon82/SailwindSail-a-dex",
-    "version": "v1.8.0"
+    "version": "v1.8.1"
   },
   {
     "guid": "com.raddude.randomencounters",
@@ -72,12 +72,12 @@
   {
     "guid": "com.raddude.economicevents",
     "repo": "https://github.com/bryon82/SailwindEconomicEvents",
-    "version": "v1.3.1"
+    "version": "v1.3.2"
   },
   {
     "guid": "com.raddude82.economicevents",
     "repo": "https://github.com/bryon82/SailwindEconomicEvents",
-    "version": "v1.3.1"
+    "version": "v1.3.2"
   },
   {
     "guid": "com.raddude.betterfishing",
