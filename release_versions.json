@@ -32,12 +32,12 @@
   {
     "guid": "com.raddude.bitsandbobsradredux",
     "repo": "https://github.com/bryon82/SailwindBitsAndBobsRadRedux",
-    "version": "v1.3.1"
+    "version": "v1.3.2"
   },
   {
     "guid": "com.raddude82.bitsandbobsradredux",
     "repo": "https://github.com/bryon82/SailwindBitsAndBobsRadRedux",
-    "version": "v1.3.1"
+    "version": "v1.3.2"
   },
   {
     "guid": "com.raddude.modsavebackups",
@@ -106,11 +106,6 @@
   },
   {
     "guid": "com.raddude82.saveslotsplus",
-    "repo": "https://github.com/bryon82/SailwindSaveSlotsPlus",
-    "version": "v2.2.3"
-  },
-  {
-    "guid": "com.raddude.moresaveslots",
     "repo": "https://github.com/bryon82/SailwindSaveSlotsPlus",
     "version": "v2.2.3"
   },
@@ -243,21 +238,6 @@
     "guid": "com.nandbrew.boatdamagefix",
     "repo": "https://github.com/NANDbrew/BoatUpdateHack",
     "version": "v1.2.0"
-  },
-  {
-    "guid": "com.TheOriginOfAllEvil.ShatteredSeas",
-    "repo": "https://github.com/TheOriginOfAllEvil/Shattered-Seas-Expansion",
-    "version": "b1.2.8"
-  },
-  {
-    "guid": "com.TheOriginOfAllEvil.ImprovedHorizon",
-    "repo": "https://github.com/TheOriginOfAllEvil/ImprovedHorizonSailwind",
-    "version": "v1.3.0"
-  },
-  {
-    "guid": "com.TheOriginOfAllEvil.ClipperCleaner",
-    "repo": "https://github.com/TheOriginOfAllEvil/Shattered-Seas-Cleaner",
-    "version": "1.0.0"
   },
   {
     "guid": "com.app24.coordinateviewer",
