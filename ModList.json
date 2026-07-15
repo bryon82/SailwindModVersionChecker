@@ -88,10 +88,6 @@
         "repo": "https://github.com/bryon82/SailwindSaveSlotsPlus"
     },
     {
-        "guid": "com.raddude.moresaveslots",
-        "repo": "https://github.com/bryon82/SailwindSaveSlotsPlus"
-    },
-    {
         "guid": "com.bepis.bepinex.configurationmanager",
         "repo": "https://github.com/BepInEx/BepInEx.ConfigurationManager"
     },
@@ -194,18 +190,6 @@
     {
         "guid": "com.nandbrew.boatdamagefix",
         "repo": "https://github.com/NANDbrew/BoatUpdateHack"
-    },
-    {
-        "guid": "com.TheOriginOfAllEvil.ShatteredSeas",
-        "repo": "https://github.com/TheOriginOfAllEvil/Shattered-Seas-Expansion"
-    },
-    {
-        "guid": "com.TheOriginOfAllEvil.ImprovedHorizon",
-        "repo": "https://github.com/TheOriginOfAllEvil/ImprovedHorizonSailwind"
-    },
-    {
-        "guid": "com.TheOriginOfAllEvil.ClipperCleaner",
-        "repo": "https://github.com/TheOriginOfAllEvil/Shattered-Seas-Cleaner"
     },
     {
         "guid": "com.app24.coordinateviewer",
