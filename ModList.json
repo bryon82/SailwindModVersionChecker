@@ -88,6 +88,10 @@
         "repo": "https://github.com/bryon82/SailwindSaveSlotsPlus"
     },
     {
+        "guid": "com.raddude.climate",
+        "repo": "https://github.com/bryon82/SailwindClimate"
+    },
+    {
         "guid": "com.bepis.bepinex.configurationmanager",
         "repo": "https://github.com/BepInEx/BepInEx.ConfigurationManager"
     },
