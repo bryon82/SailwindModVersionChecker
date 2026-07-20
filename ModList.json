@@ -196,10 +196,6 @@
         "repo": "https://github.com/NANDbrew/BoatUpdateHack"
     },
     {
-        "guid": "com.app24.coordinateviewer",
-        "repo": "https://github.com/AppSailwindMods/CoordinateViewer"
-    },
-    {
         "guid": "com.jakeinaboat.cargocontroller",
         "repo": "https://github.com/JakeInABoat/SailwindCargoController"
     },
