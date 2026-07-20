@@ -204,18 +204,6 @@
         "repo": "https://github.com/JakeInABoat/SailwindCargoController"
     },
     {
-        "guid": "com.yourname.sailwind.sealifeplugin",
-        "repo": "https://github.com/BryanP-JP19/SailwindSeaLifeMod"
-    },
-    {
-        "guid": "com.kerseb.AutoSails",
-        "repo": "https://github.com/kerseb/AutoSails"
-    },
-    {
-        "guid": "com.kerseb.AutoPilot",
-        "repo": "https://github.com/kerseb/AutoPilot"
-    },
-    {
         "guid": "com.zallek.sailwindregatta",
         "repo": "https://github.com/zallek/sailwind-regatta"
     }
