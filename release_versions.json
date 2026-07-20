@@ -62,12 +62,12 @@
   {
     "guid": "com.raddude.radrefinements",
     "repo": "https://github.com/bryon82/SailwindRadRefinements",
-    "version": "v1.4.0"
+    "version": "v1.5.0"
   },
   {
     "guid": "com.raddude82.radrefinements",
     "repo": "https://github.com/bryon82/SailwindRadRefinements",
-    "version": "v1.4.0"
+    "version": "v1.5.0"
   },
   {
     "guid": "com.raddude.economicevents",
@@ -108,6 +108,11 @@
     "guid": "com.raddude82.saveslotsplus",
     "repo": "https://github.com/bryon82/SailwindSaveSlotsPlus",
     "version": "v2.2.3"
+  },
+  {
+    "guid": "com.raddude.climate",
+    "repo": "https://github.com/bryon82/SailwindClimate",
+    "version": "v1.0.1"
   },
   {
     "guid": "com.bepis.bepinex.configurationmanager",
@@ -240,29 +245,9 @@
     "version": "v1.3.0"
   },
   {
-    "guid": "com.app24.coordinateviewer",
-    "repo": "https://github.com/AppSailwindMods/CoordinateViewer",
-    "version": "none"
-  },
-  {
     "guid": "com.jakeinaboat.cargocontroller",
     "repo": "https://github.com/JakeInABoat/SailwindCargoController",
     "version": "v0.3.1"
-  },
-  {
-    "guid": "com.yourname.sailwind.sealifeplugin",
-    "repo": "https://github.com/BryanP-JP19/SailwindSeaLifeMod",
-    "version": "release"
-  },
-  {
-    "guid": "com.kerseb.AutoSails",
-    "repo": "https://github.com/kerseb/AutoSails",
-    "version": "none"
-  },
-  {
-    "guid": "com.kerseb.AutoPilot",
-    "repo": "https://github.com/kerseb/AutoPilot",
-    "version": "none"
   },
   {
     "guid": "com.zallek.sailwindregatta",
