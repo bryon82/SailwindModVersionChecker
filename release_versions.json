@@ -220,6 +220,11 @@
     "version": "v1.1.3"
   },
   {
+    "guid": "com.nandbrew.Windicators",
+    "repo": "https://github.com/NANDbrew/Windicators",
+    "version": "v1.1.1"
+  },
+  {
     "guid": "NatoriusG.AllSailsAllShipyards",
     "repo": "https://github.com/NANDbrew/AllSailsAllShipyards",
     "version": "v1.0.2"
