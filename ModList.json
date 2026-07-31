@@ -176,6 +176,10 @@
         "repo": "https://github.com/NANDbrew/SailCollisionFix"
     },
     {
+        "guid": "com.nandbrew.Windicators",
+        "repo": "https://github.com/NANDbrew/Windicators"
+    },
+    {
         "guid": "NatoriusG.AllSailsAllShipyards",
         "repo": "https://github.com/NANDbrew/AllSailsAllShipyards"
     },
