@@ -8,7 +8,7 @@ Mod release versions are checked hourly at 20 minutes past the hour, so there ma
 
 ## For Mod Authors
 
-This works by comparing the version obtained from the BepInEx ChainLoader against the GitHub release tag or Thunderstore package version. The GitHub release tag can have any characters in it as long as there is some form of `int.int.int` in the tag. When you release a version of your mod, the BepInEx version must match the GitHub release tag version or the users will get constant update notices.  
+This works by comparing the version obtained from the BepInEx ChainLoader against the GitHub release tag or Thunderstore package version. The GitHub release tag can have any characters in it as long as there is some form of `int.int.int` in the tag. When you release a version of your mod, the BepInEx version must match the GitHub release tag version number or the users will get constant update notices.  
 
 ![Showing versions matching](https://github.com/bryon82/SailwindModVersionChecker/blob/main/Screenshots/VersionsMustMatch.png)  
 
