@@ -62,12 +62,12 @@
   {
     "guid": "com.raddude.radrefinements",
     "repo": "https://github.com/bryon82/SailwindRadRefinements",
-    "version": "v1.6.1"
+    "version": "v1.6.2"
   },
   {
     "guid": "com.raddude82.radrefinements",
     "repo": "https://github.com/bryon82/SailwindRadRefinements",
-    "version": "v1.6.1"
+    "version": "v1.6.2"
   },
   {
     "guid": "com.raddude.economicevents",
@@ -237,7 +237,7 @@
   {
     "guid": "com.nandbrew.nandcommand",
     "repo": "https://github.com/NANDbrew/NANDCommand",
-    "version": "v1.0.12"
+    "version": "v1.0.13"
   },
   {
     "guid": "com.nandbrew.SWTimeScale",
