@@ -1,21 +1,19 @@
 # ModVersionChecker
 
-Checks the version of BepInEx mods against their release versions on either GitHub or Thunderstore websites. 
-If there are any updates available for installed mods, a notification will pop up on game startup. 
-In the notification there is a button to visit the mod websites to download the available updates.  
+Checks the version of BepInEx mods against their release versions on either GitHub or Thunderstore websites. If there are any updates available for installed mods, a notification will pop up on game startup. In the notification there is a button to visit the mod websites to download the available updates.  
 <br>
-Mod release versions are checked hourly at 20 minutes past the hour so there may be a lag from when a mod author publishes a release.  
+Mod release versions are checked hourly at 20 minutes past the hour, so there may be a lag from when a mod author publishes a release.  
 
 ![Screenshot of Updates Available Notification](https://github.com/bryon82/SailwindModVersionChecker/blob/main/Screenshots/ModVersionChecker.png)  
 
 ## For Mod Authors
 
-This works by comparing the version obtained from the BepInEx ChainLoader against the GitHub release 
-tag or Thunderstore package version. The GitHub release tag can have any characters in it as long as 
-there is some form of `int.int.int` in the tag. If you want your mod to be checked by 
-ModVersionChecker your mod will need to be listed in [ModList.json](https://github.com/bryon82/SailwindModVersionChecker/blob/main/ModList.json). 
-If you want your mod listed or you need to update your mod entry send a pull request with the necessary changes. 
-Here is an example entry:
+This works by comparing the version obtained from the BepInEx ChainLoader against the GitHub release tag or Thunderstore package version. The GitHub release tag can have any characters in it as long as there is some form of `int.int.int` in the tag. When you release a version of your mod, the BepInEx version must match the GitHub release tag version or the users will get constant update notices.  
+
+![Showing versions matching](https://github.com/bryon82/SailwindModVersionChecker/blob/main/Screenshots/VersionsMustMatch.png)  
+
+If you want your mod to be checked by ModVersionChecker your mod will need to be listed in [ModList.json](https://github.com/bryon82/SailwindModVersionChecker/blob/main/ModList.json). 
+If you want your mod listed or you need to update your mod entry send a pull request with the necessary changes. Here is an example entry:
 
 ExampleMod entry
 ```json
