@@ -22,12 +22,12 @@
   {
     "guid": "com.raddude.randomencounters",
     "repo": "https://github.com/bryon82/SailwindRandomEncounters",
-    "version": "v2.0.0"
+    "version": "v2.0.1"
   },
   {
     "guid": "com.raddude82.randomencounters",
     "repo": "https://github.com/bryon82/SailwindRandomEncounters",
-    "version": "v2.0.0"
+    "version": "v2.0.1"
   },
   {
     "guid": "com.raddude.bitsandbobsradredux",
@@ -52,22 +52,22 @@
   {
     "guid": "com.raddude.radfixes",
     "repo": "https://github.com/bryon82/SailwindRadFixes",
-    "version": "v1.3.3"
+    "version": "v1.3.4"
   },
   {
     "guid": "com.raddude82.radfixes",
     "repo": "https://github.com/bryon82/SailwindRadFixes",
-    "version": "v1.3.3"
+    "version": "v1.3.4"
   },
   {
     "guid": "com.raddude.radrefinements",
     "repo": "https://github.com/bryon82/SailwindRadRefinements",
-    "version": "v1.6.2"
+    "version": "v1.7.0"
   },
   {
     "guid": "com.raddude82.radrefinements",
     "repo": "https://github.com/bryon82/SailwindRadRefinements",
-    "version": "v1.6.2"
+    "version": "v1.7.0"
   },
   {
     "guid": "com.raddude.economicevents",
@@ -82,22 +82,22 @@
   {
     "guid": "com.raddude.betterfishing",
     "repo": "https://github.com/bryon82/SailwindBetterFishing",
-    "version": "v1.5.0"
+    "version": "v1.6.0"
   },
   {
     "guid": "com.raddude82.betterfishing",
     "repo": "https://github.com/bryon82/SailwindBetterFishing",
-    "version": "v1.5.0"
+    "version": "v1.6.0"
   },
   {
     "guid": "com.raddude.hookshangmore",
     "repo": "https://github.com/bryon82/SailwindHooksHangMore",
-    "version": "v2.2.1"
+    "version": "v2.2.2"
   },
   {
     "guid": "com.raddude82.hookshangmore",
     "repo": "https://github.com/bryon82/SailwindHooksHangMore",
-    "version": "v2.2.1"
+    "version": "v2.2.2"
   },
   {
     "guid": "com.raddude.saveslotsplus",
@@ -112,7 +112,7 @@
   {
     "guid": "com.raddude.climate",
     "repo": "https://github.com/bryon82/SailwindClimate",
-    "version": "v1.3.1"
+    "version": "v1.5.0"
   },
   {
     "guid": "com.bepis.bepinex.configurationmanager",
@@ -152,12 +152,12 @@
   {
     "guid": "com.nandbrew.nandfixes",
     "repo": "https://github.com/NANDbrew/NANDFixes",
-    "version": "v1.4.1"
+    "version": "v1.4.2"
   },
   {
     "guid": "com.nandbrew.shipyardexpansion",
     "repo": "https://github.com/NANDbrew/ShipyardExpansion",
-    "version": "v0.10.1"
+    "version": "v0.11.1"
   },
   {
     "guid": "com.nandbrew.savecleaner",
