@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v1.3.0] - 2026-08-17
+
+### Add
+- Local caching of versions to help with rate limits.
+- Add gitlab repo checking.
+
+### Updated
+- Website for getting version list to avoid hitting github rate limits.
+- Version casting to accept 1 to 3 groups of integers instead of only 3.
+
 ## [v1.2.2] - 2025-04-14
 
 ### Updated
