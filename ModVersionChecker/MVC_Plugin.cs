@@ -15,7 +15,7 @@ namespace ModVersionChecker
     {
         public const string PLUGIN_GUID = "zzz.raddude.modversionchecker";
         public const string PLUGIN_NAME = "ModVersionChecker";
-        public const string PLUGIN_VERSION = "1.3.2";
+        public const string PLUGIN_VERSION = "1.3.3";
 
         internal static MVC_Plugin Instance { get; private set; }
         private static ManualLogSource _logger;
