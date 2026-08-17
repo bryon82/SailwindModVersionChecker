@@ -1,4 +1,4 @@
-﻿namespace SailwindModVersionChecker
+﻿namespace ModVersionChecker
 {
     internal class ReleaseVersionResponse
     {

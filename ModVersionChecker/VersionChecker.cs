@@ -8,9 +8,9 @@ using System.Linq;
 using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using static SailwindModVersionChecker.MVC_Plugin;
+using static ModVersionChecker.MVC_Plugin;
 
-namespace SailwindModVersionChecker
+namespace ModVersionChecker
 {
     internal class VersionChecker
     {

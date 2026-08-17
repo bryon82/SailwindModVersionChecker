@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SailwindModVersionChecker
+namespace ModVersionChecker
 {
     internal class DismissButton : GoPointerButton
     {

@@ -3,7 +3,7 @@ using HarmonyLib;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SailwindModVersionChecker
+namespace ModVersionChecker
 {
     internal class UpdatesUI : MonoBehaviour
     {

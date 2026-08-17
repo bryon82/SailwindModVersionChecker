@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
-namespace SailwindModVersionChecker
+namespace ModVersionChecker
 {
     [BepInPlugin(PLUGIN_GUID, PLUGIN_NAME, PLUGIN_VERSION)]
     public class MVC_Plugin : BaseUnityPlugin

@@ -7,7 +7,7 @@
     <ProjectGuid>{13775E6A-9947-48D2-92AE-36C62D393A28}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SailwindModVersionChecker</RootNamespace>
+    <RootNamespace>ModVersionChecker</RootNamespace>
     <AssemblyName>ModVersionChecker</AssemblyName>
     <OutputPath>bin\Debug</OutputPath>
     <ModName>ModVersionChecker</ModName>

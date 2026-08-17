@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 
-namespace SailwindModVersionChecker
+namespace ModVersionChecker
 {
     internal class UIPatches
     {
