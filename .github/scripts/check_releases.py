@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Script to check for new releases in GitHub repositories and Thunderstore packages.
+Script to check for new releases in GitHub repositories, GitLab repositories, and Thunderstore packages.
 """
 import os
 import json
@@ -9,12 +9,11 @@ import requests
 import github
 from github import Github
 
-# Configuration files
 MOD_LIST_FILE = "ModList.json"
 RELEASE_VERSIONS_FILE = "release_versions.json"
 
-# Thunderstore API base URL
 THUNDERSTORE_API_URL = "https://thunderstore.io/api/experimental"
+GITLAB_API_URL = "https://gitlab.com/api/v4"
 
 def load_mod_list():
     """Load repository list from ModList.json"""
@@ -26,6 +25,15 @@ def extract_repo_info(repo_url):
     """Extract owner and repository name from a GitHub URL"""
     # Handle formats like https://github.com/owner/repo or github.com/owner/repo
     pattern = r"(?:https?://)?(?:www\.)?github\.com[/:]([^/]+)/([^/]+)(?:\.git)?/?$"
+    match = re.match(pattern, repo_url)
+    if match:
+        return f"{match.group(1)}/{match.group(2)}"
+    return None
+
+def extract_gitlab_info(repo_url):
+    """Extract project path from a GitLab URL"""
+    # Handle formats like https://gitlab.com/group/project or gitlab.com/group/project
+    pattern = r"(?:https?://)?(?:www\.)?gitlab\.com[/:]([^/]+)/([^/]+)(?:\.git)?/?$"
     match = re.match(pattern, repo_url)
     if match:
         return f"{match.group(1)}/{match.group(2)}"
@@ -54,6 +62,32 @@ def get_latest_github_release(repo_name, g):
         return latest_release.tag_name
     except github.GithubException as e:
         print(f"Error fetching release for GitHub repo {repo_name}: {e}")
+        return None
+
+def get_latest_gitlab_release(project_path):
+    """Get the latest release for a GitLab repository"""
+    try:
+        # URL encode the project path
+        encoded_path = requests.utils.quote(project_path, safe='')
+        url = f"{GITLAB_API_URL}/projects/{encoded_path}/releases"
+
+        response = requests.get(url)
+        if response.status_code == 200:
+            releases = response.json()
+            if releases:
+                # Return the tag name of the first (latest) release
+                return releases[0].get("tag_name")
+            else:
+                print(f"No releases found for GitLab repo {project_path}")
+                return None
+        elif response.status_code == 404:
+            print(f"GitLab repo {project_path} not found or no access")
+            return None
+        else:
+            print(f"Error fetching GitLab releases for {project_path}: HTTP {response.status_code}")
+            return None
+    except Exception as e:
+        print(f"Error fetching GitLab release for {project_path}: {e}")
         return None
 
 def get_latest_thunderstore_version(package_info):
@@ -119,6 +153,18 @@ def main():
                     print(f"Latest GitHub version for {repo_name} (GUID: {guid}): {version}")
             else:
                 print("GITHUB_TOKEN not provided, skipping GitHub repository checks")
+
+        # Check if this is a GitLab repository
+        elif "gitlab.com" in repo_url:
+            project_path = extract_gitlab_info(repo_url)
+            if project_path:
+                print(f"Checking GitLab release for {project_path} (GUID: {guid})")
+                latest_version = get_latest_gitlab_release(project_path)
+                if latest_version:
+                    version = latest_version
+                    print(f"Latest GitLab version for {project_path} (GUID: {guid}): {version}")
+            else:
+                print(f"Could not extract GitLab project info from URL: {repo_url}")
 
         # Check if this is a Thunderstore package
         elif "thunderstore.io" in repo_url:

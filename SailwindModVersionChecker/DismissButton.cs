@@ -4,10 +4,10 @@ namespace SailwindModVersionChecker
 {
     internal class DismissButton : GoPointerButton
     {
-        public GameObject updatesUI;
+        internal GameObject UIGameObject { get; set; }
         public override void OnActivate()
         {
-            updatesUI.gameObject.SetActive(false);
+            UIGameObject.gameObject.SetActive(false);
         }
     }
 }

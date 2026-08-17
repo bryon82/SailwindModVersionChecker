@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
 using System;
+using static SailwindModVersionChecker.MVC_Plugin;
 
 namespace SailwindModVersionChecker
 {
     internal class VisitWebsiteButton : GoPointerButton
     {
-        public GameObject updatesUI;
+        internal GameObject UIGameObject { get; set; }
 
         public override void OnActivate()
         {
-            foreach(string website in UpdatesUI.websites)
+            foreach(string website in UpdatesUI.Websites)
             {
                 try
                 {
@@ -17,11 +18,11 @@ namespace SailwindModVersionChecker
                 }
                 catch (Exception e)
                 {
-                    Plugin.logger.LogError(e);
+                    LogError($"{e}");
                 }
             }
 
-            updatesUI.gameObject.SetActive(false);
+            UIGameObject.gameObject.SetActive(false);
         }
     }
 }

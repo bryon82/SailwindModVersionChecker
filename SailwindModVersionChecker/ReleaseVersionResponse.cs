@@ -2,8 +2,8 @@
 {
     internal class ReleaseVersionResponse
     {
-        public string guid { get; set; }
-        public string version { get; set; }
-        public string repo { get; set; }
+        public string Guid { get; set; }
+        public string Version { get; set; }
+        public string Repo { get; set; }
     }
 }

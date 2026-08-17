@@ -19,8 +19,8 @@ namespace SailwindModVersionChecker
             [HarmonyPatch("ButtonClick", new System.Type[] { typeof(StartMenuButtonType) })]
             public static void HideUpdatesUI()
             {
-                if(UpdatesUI.ui.activeInHierarchy)
-                    UpdatesUI.ui.SetActive(false);
+                if(UpdatesUI.UI.activeInHierarchy)
+                    UpdatesUI.UI.SetActive(false);
             }
         }
     }

@@ -3,24 +3,30 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static SailwindModVersionChecker.MVC_Plugin;
 
 namespace SailwindModVersionChecker
 {
     internal class VersionChecker
     {
-        const string modReleaseVersionsListurl = "https://raw.githubusercontent.com/bryon82/SailwindModVersionChecker/main/release_versions.json";
-        const string githubWebsite = "https://github.com/";
-        const string thunderstoreWebsite = "https://thunderstore.io/c/sailwind/p/";
+        private const string RELEASE_VERSIONS_LIST_URL =
+            "https://cdn.jsdelivr.net/gh/bryon82/SailwindModVersionChecker@main/release_versions.json";
+        private const string GITHUB_URL = "https://github.com/";
+        private const string GITLAB_URL = "https://gitlab.com/";
+        private const string THUNDERSTORE_URL = "https://thunderstore.io/c/sailwind/p/";
+        private const string CACHE_FILE = "mvc_cache.json";
+        private const int CHECK_INTERVAL_HOURS = 2;
 
         internal static async Task<(string, List<string>)> Check(Dictionary<string, PluginInfo> pluginInfos)
         {
             if (pluginInfos == null || pluginInfos.Count == 0)
             {
-                Plugin.logger.LogError("No plugins found to check for updates.");
+                LogError("No plugins found to check for updates.");
                 return (null, null);
             }
 
@@ -28,7 +34,7 @@ namespace SailwindModVersionChecker
             var modList = await GetModVersionsList();
             if (modList == null)
             {
-                Plugin.logger.LogError("GetModVersionsList returned null");
+                LogError("GetModVersionsList returned null");
                 return (null, null);
             }
 
@@ -42,24 +48,24 @@ namespace SailwindModVersionChecker
 
                 if (guidProperty == null || versionProperty == null || repoProperty == null)
                 {
-                    Plugin.logger.LogWarning("Skipping mod with missing properties");
+                    LogWarning("Skipping mod with missing properties");
                     continue;
                 }
 
                 var versionString = versionProperty.ToString();
-                var versionMatch = Regex.Match(versionString, @"(\d+\.\d+\.\d+)");
+                var versionMatch = Regex.Match(versionString, @"\d+(?:\.\d+){1,3}");
                 if (!versionMatch.Success)
                 {
-                    Plugin.logger.LogWarning($"Skipping mod with invalid version format: {guidProperty} {versionString}");
+                    LogWarning($"Skipping mod with invalid version format: {guidProperty} {versionString}");
                     continue;
                 }
 
                 latestReleaseList.Add(new ReleaseVersionResponse
                 {
-                    guid = guidProperty.ToString(),
-                    version = versionMatch.Groups[1].Value,
-                    repo = repoProperty.ToString()
-                });                
+                    Guid = guidProperty.ToString(),
+                    Version = versionMatch.Value,
+                    Repo = repoProperty.ToString()
+                });
             }
 
             var updates = "";
@@ -72,78 +78,125 @@ namespace SailwindModVersionChecker
                 var guid = metadata.GUID;
                 var version = metadata.Version.ToString();
 
-                var latestRelease = latestReleaseList.FirstOrDefault(m => m.guid == guid);
+                var latestRelease = latestReleaseList.FirstOrDefault(m => m.Guid == guid);
                 if (latestRelease == null ||
-                    latestRelease.version.IsNullOrWhiteSpace() ||
-                    latestRelease.repo.IsNullOrWhiteSpace())
+                    latestRelease.Version.IsNullOrWhiteSpace() ||
+                    latestRelease.Repo.IsNullOrWhiteSpace())
                 {
                     continue;
-                }                    
+                }
 
                 Version vCurrent;
                 Version vLatest;
 
                 try
                 {
-                    vCurrent = new Version(version);
-                    vLatest = new Version(latestRelease.version);
+                    var normalizedCurrent = NormalizeVersion(version);
+                    var normalizedLatest = NormalizeVersion(latestRelease.Version);
+
+                    if (normalizedCurrent == null || normalizedLatest == null)
+                    {
+                        LogWarning($"{guid}: could not parse version string(s) '{version}' / '{latestRelease.Version}'");
+                        continue;
+                    }
+
+                    vCurrent = new Version(normalizedCurrent);
+                    vLatest = new Version(normalizedLatest);
                 }
                 catch (ArgumentException e)
                 {
-                    Plugin.logger.LogWarning($"{guid}: {e.Message}");
+                    LogWarning($"{guid}: {e.Message}");
                     continue;
                 }
 
                 if (vCurrent.CompareTo(vLatest) < 0)
                 {
-                    updates += $"{metadata.Name} {version} → {latestRelease.version}\n";
-                    Plugin.logger.LogInfo($"*Update Available*  {metadata.Name} {version} → {latestRelease.version}");
-                    if (latestRelease.repo.StartsWith(githubWebsite))
+                    updates += $"{metadata.Name} {version} → {latestRelease.Version}\n";
+                    LogInfo($"*Update Available*  {metadata.Name} {version} → {latestRelease.Version}");
+                    if (latestRelease.Repo.StartsWith(GITHUB_URL))
                     {
-                        websites.Add($"{latestRelease.repo}/releases/latest");
+                        websites.Add($"{latestRelease.Repo}/releases/latest");
                     }
-                    else if (latestRelease.repo.StartsWith(thunderstoreWebsite))
+                    else if (latestRelease.Repo.StartsWith(THUNDERSTORE_URL))
                     {
-                        websites.Add(latestRelease.repo);
+                        websites.Add(latestRelease.Repo);
                     }
-
+                    else if (latestRelease.Repo.StartsWith(GITLAB_URL))
+                    {
+                        websites.Add($"{latestRelease.Repo}/-/releases");
+                    }
                     continue;
                 }
 
-                Plugin.logger.LogInfo($"{metadata.Name} is up to date");
-            }            
+                LogInfo($"{metadata.Name} is up to date");
+            }
 
             return (updates, websites);
         }
 
         internal static async Task<JArray> GetModVersionsList()
         {
+            var cachePath = Path.Combine(Path.GetDirectoryName(SaveSlots.GetCurrentSavePath()), CACHE_FILE);
             try
             {
-                HttpClient _httpClient = new HttpClient();
-                _httpClient.DefaultRequestHeaders.Add("User-Agent", "C# GitHub Content Fetcher");
+                if (File.Exists(cachePath))
+                {
+                    var cache = JObject.Parse(File.ReadAllText(cachePath));
+                    var lastChecked = cache["lastChecked"]?.ToObject<DateTime>() ?? DateTime.MinValue;
+                    if (DateTime.UtcNow - lastChecked < TimeSpan.FromHours(CHECK_INTERVAL_HOURS))
+                    {
+                        LogDebug("Using cached release versions (checked recently)");
+                        return (JArray)cache["data"];
+                    }
+                }
 
-                HttpResponseMessage response = await _httpClient.GetAsync(modReleaseVersionsListurl);
+                var _httpClient = new HttpClient();
+                _httpClient.DefaultRequestHeaders.Add("User-Agent", "SailwindModVersionChecker");
+
+                var response = await _httpClient.GetAsync(RELEASE_VERSIONS_LIST_URL);
                 response.EnsureSuccessStatusCode();
                 var jsonContent = await response.Content.ReadAsStringAsync();
+                var data = JArray.Parse(jsonContent);
 
-                return JArray.Parse(jsonContent);
+                File.WriteAllText(cachePath, new JObject
+                {
+                    ["lastChecked"] = DateTime.UtcNow,
+                    ["data"] = data
+                }.ToString());
+
+                return data;
             }
             catch (HttpRequestException e)
             {
-                Plugin.logger.LogError($"Error accessing website API: {e.Message}");
+                LogError($"Error accessing website API: {e.Message}");
+                // fall back to stale cache
+                if (File.Exists(cachePath))
+                {
+                    LogWarning("Falling back to stale cache due to network error");
+                    return (JArray)JObject.Parse(File.ReadAllText(cachePath))["data"];
+                }
                 return null;
             }
             catch (JsonException e)
             {
-                Plugin.logger.LogError($"Error parsing JSON response: {e.Message}");
+                LogError($"Error parsing JSON response: {e.Message}");
                 return null;
             }
-            catch (Exception e)
-            {
-                Plugin.logger.LogError($"An unexpected error occurred: {e.Message}");
-                return null;
-            }
+        }
+
+        private static string NormalizeVersion(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input)) return null;
+
+            // grab the leading numeric dotted sequence, ignore 'v' prefixes, -beta suffixes, etc.
+            var match = Regex.Match(input, @"\d+(\.\d+){0,3}");
+            if (!match.Success) return null;
+
+            var parts = match.Value.Split('.').ToList();
+            while (parts.Count < 4)
+                parts.Add("0");   // pad up to major.minor.build.revision
+
+            return string.Join(".", parts);
         }
     }
 }
