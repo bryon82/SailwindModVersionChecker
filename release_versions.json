@@ -258,5 +258,30 @@
     "guid": "com.zallek.sailwindregatta",
     "repo": "https://github.com/zallek/sailwind-regatta",
     "version": "0.2.2"
+  },
+  {
+    "guid": "com.DogEggz.postalexpansion",
+    "repo": "https://github.com/DogEggz01/PostalExpansion",
+    "version": "1.0.0"
+  },
+  {
+    "guid": "com.pete.sailwind.windconfigurator",
+    "repo": "https://github.com/DogEggz01/ChaoticWind",
+    "version": "1.2.0"
+  },
+  {
+    "guid": "DogEggz.unlimitedhammer",
+    "repo": "https://github.com/DogEggz01/UnlimitedHammer",
+    "version": "1.0.1"
+  },
+  {
+    "guid": "com.pro1p.sailwind.junkandgaffadjustment",
+    "repo": "https://github.com/DogEggz01/Sail-Rebalance",
+    "version": "1.1.12"
+  },
+  {
+    "guid": "com.DogEggz.sailwind.freecameraandcollision",
+    "repo": "https://github.com/DogEggz01/FreeCameraAndWaterCollision",
+    "version": "1.3.1"
   }
 ]
