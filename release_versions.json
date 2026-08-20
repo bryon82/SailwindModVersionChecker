@@ -32,12 +32,12 @@
   {
     "guid": "com.raddude.bitsandbobsradredux",
     "repo": "https://github.com/bryon82/SailwindBitsAndBobsRadRedux",
-    "version": "v1.3.2"
+    "version": "v1.4.0"
   },
   {
     "guid": "com.raddude82.bitsandbobsradredux",
     "repo": "https://github.com/bryon82/SailwindBitsAndBobsRadRedux",
-    "version": "v1.3.2"
+    "version": "v1.4.0"
   },
   {
     "guid": "com.raddude.modsavebackups",
@@ -62,12 +62,12 @@
   {
     "guid": "com.raddude.radrefinements",
     "repo": "https://github.com/bryon82/SailwindRadRefinements",
-    "version": "v1.7.0"
+    "version": "v1.8.0"
   },
   {
     "guid": "com.raddude82.radrefinements",
     "repo": "https://github.com/bryon82/SailwindRadRefinements",
-    "version": "v1.7.0"
+    "version": "v1.8.0"
   },
   {
     "guid": "com.raddude.economicevents",
@@ -113,6 +113,11 @@
     "guid": "com.raddude.climate",
     "repo": "https://github.com/bryon82/SailwindClimate",
     "version": "v1.5.0"
+  },
+  {
+    "guid": "com.raddude.betterlanternsandlights",
+    "repo": "https://github.com/bryon82/SailwindBetterLanternsAndLights",
+    "version": "v1.0.0"
   },
   {
     "guid": "com.bepis.bepinex.configurationmanager",
