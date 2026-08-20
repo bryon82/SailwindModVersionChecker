@@ -92,6 +92,10 @@
         "repo": "https://github.com/bryon82/SailwindClimate"
     },
     {
+        "guid": "com.raddude.betterlanternsandlights",
+        "repo": "https://github.com/bryon82/SailwindBetterLanternsAndLights"
+    },
+    {
         "guid": "com.bepis.bepinex.configurationmanager",
         "repo": "https://github.com/BepInEx/BepInEx.ConfigurationManager"
     },
