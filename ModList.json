@@ -230,5 +230,9 @@
     {
         "guid": "com.DogEggz.sailwind.freecameraandcollision",
         "repo": "https://github.com/DogEggz01/FreeCameraAndWaterCollision"
+    },
+    {
+        "guid": "com.kemy.kemyfurniture",
+        "repo": "https://github.com/Kemylar/KemyFurnitureMod"
     }
 ]
