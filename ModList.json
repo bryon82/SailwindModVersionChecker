@@ -232,6 +232,18 @@
         "repo": "https://github.com/DogEggz01/FreeCameraAndWaterCollision"
     },
     {
+        "guid": "com.DogEggz.BucketPourFurther",
+        "repo": "https://github.com/DogEggz01/BucketPourFurther"
+    },
+    {
+        "guid": "DogEggz.PowerfulOar",
+        "repo": "https://github.com/DogEggz01/PowerfulOar"
+    },
+    {
+        "guid": "dogeggz.unstayedjunksailmast",
+        "repo": "https://github.com/DogEggz01/UnstayedJunkSailMast"
+    },
+    {
         "guid": "com.kemy.kemyfurniture",
         "repo": "https://github.com/Kemylar/KemyFurnitureMod"
     }
