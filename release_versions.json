@@ -290,6 +290,21 @@
     "version": "1.3.3"
   },
   {
+    "guid": "com.DogEggz.BucketPourFurther",
+    "repo": "https://github.com/DogEggz01/BucketPourFurther",
+    "version": "1.0.0"
+  },
+  {
+    "guid": "DogEggz.PowerfulOar",
+    "repo": "https://github.com/DogEggz01/PowerfulOar",
+    "version": "1.0.3"
+  },
+  {
+    "guid": "dogeggz.unstayedjunksailmast",
+    "repo": "https://github.com/DogEggz01/UnstayedJunkSailMast",
+    "version": "1.1.1"
+  },
+  {
     "guid": "com.kemy.kemyfurniture",
     "repo": "https://github.com/Kemylar/KemyFurnitureMod",
     "version": "V1.2.0"
