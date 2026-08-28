@@ -244,6 +244,14 @@
         "repo": "https://github.com/DogEggz01/UnstayedJunkSailMast"
     },
     {
+        "guid": "DogEggz.BetterStorm",
+        "repo": "https://github.com/DogEggz01/BetterStorm" 
+    },
+    {
+        "guid": "DogEggz.SwappableStaysail",
+        "repo": "https://github.com/DogEggz01/SwappableStaysail"
+    },
+    {
         "guid": "com.kemy.kemyfurniture",
         "repo": "https://github.com/Kemylar/KemyFurnitureMod"
     }
