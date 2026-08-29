@@ -305,6 +305,16 @@
     "version": "1.2.5"
   },
   {
+    "guid": "DogEggz.BetterStorm",
+    "repo": "https://github.com/DogEggz01/BetterStorm",
+    "version": "1.0.8"
+  },
+  {
+    "guid": "DogEggz.SwappableStaysail",
+    "repo": "https://github.com/DogEggz01/SwappableStaysail",
+    "version": "1.1.4"
+  },
+  {
     "guid": "com.kemy.kemyfurniture",
     "repo": "https://github.com/Kemylar/KemyFurnitureMod",
     "version": "V1.2.0"
