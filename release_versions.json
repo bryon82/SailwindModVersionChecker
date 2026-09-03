@@ -227,7 +227,7 @@
   {
     "guid": "com.nandbrew.Windicators",
     "repo": "https://github.com/NANDbrew/Windicators",
-    "version": "v1.2.0"
+    "version": "v1.2.1"
   },
   {
     "guid": "NatoriusG.AllSailsAllShipyards",
@@ -242,7 +242,7 @@
   {
     "guid": "com.nandbrew.nandcommand",
     "repo": "https://github.com/NANDbrew/NANDCommand",
-    "version": "v1.0.13"
+    "version": "v1.0.14"
   },
   {
     "guid": "com.nandbrew.SWTimeScale",
