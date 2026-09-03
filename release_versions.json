@@ -318,5 +318,10 @@
     "guid": "com.kemy.kemyfurniture",
     "repo": "https://github.com/Kemylar/KemyFurnitureMod",
     "version": "v1.3.1"
+  },
+  {
+    "guid": "com.dizzy.sailwind.gamma",
+    "repo": "https://github.com/foxyv/dizzy_sailwind_mods",
+    "version": "v0.2.0"
   }
 ]
