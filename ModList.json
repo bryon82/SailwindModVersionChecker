@@ -258,5 +258,9 @@
     {
         "guid": "com.dizzy.sailwind.gamma",
         "repo": "https://github.com/foxyv/dizzy_sailwind_mods"
+    },
+    {
+        "guid": "com.dizzy.sailwind.fixes",
+        "repo": "https://github.com/foxyv/dizzy_sailwind_fixes"
     }
 ]
