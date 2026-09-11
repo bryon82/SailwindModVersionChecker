@@ -323,5 +323,10 @@
     "guid": "com.dizzy.sailwind.gamma",
     "repo": "https://github.com/foxyv/dizzy_sailwind_mods",
     "version": "v0.3.3"
+  },
+  {
+    "guid": "com.dizzy.sailwind.fixes",
+    "repo": "https://github.com/foxyv/dizzy_sailwind_fixes",
+    "version": "v0.2.39"
   }
 ]
