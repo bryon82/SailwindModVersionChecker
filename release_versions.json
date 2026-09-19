@@ -157,7 +157,7 @@
   {
     "guid": "com.nandbrew.nandfixes",
     "repo": "https://github.com/NANDbrew/NANDFixes",
-    "version": "v1.4.2"
+    "version": "v1.4.3"
   },
   {
     "guid": "com.nandbrew.shipyardexpansion",
@@ -172,7 +172,7 @@
   {
     "guid": "com.nandbrew.nandtweaks",
     "repo": "https://github.com/NANDbrew/NANDTweaks",
-    "version": "v1.7.4"
+    "version": "v1.7.5"
   },
   {
     "guid": "com.nandbrew.anchorimprovements",
@@ -242,7 +242,7 @@
   {
     "guid": "com.nandbrew.nandcommand",
     "repo": "https://github.com/NANDbrew/NANDCommand",
-    "version": "v1.0.14"
+    "version": "v1.0.15"
   },
   {
     "guid": "com.nandbrew.SWTimeScale",
@@ -252,7 +252,7 @@
   {
     "guid": "com.nandbrew.boatdamagefix",
     "repo": "https://github.com/NANDbrew/BoatUpdateHack",
-    "version": "v1.3.0"
+    "version": "v1.3.1"
   },
   {
     "guid": "com.jakeinaboat.cargocontroller",
