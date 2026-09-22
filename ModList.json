@@ -262,5 +262,13 @@
     {
         "guid": "com.dizzy.sailwind.fixes",
         "repo": "https://github.com/foxyv/dizzy_sailwind_fixes"
+    },
+    {
+        "guid": "com.Exocet.customitemspawner",
+        "repo": "https://github.com/ExocetC3i/Sailwind_CustomItemSpawner"
+    },
+    {
+        "guid": "com.Exocet.SoundEffectVolumeLimiter",
+        "repo": "https://github.com/ExocetC3i/Sailwind_SoundEffectVolumeLimiter"
     }
 ]
