@@ -310,9 +310,49 @@
     "version": "1.1.6"
   },
   {
-    "guid": "DogEggz.SwappableStaysail",
+    "guid": "DogEggz",
     "repo": "https://github.com/DogEggz01/SwappableStaysail",
     "version": "1.2.1"
+  },
+  {
+    "guid": "DogEggz.AlternativeEmeraldSea",
+    "repo": "https://github.com/DogEggz01/AlternativeOceanColor",
+    "version": "1.2.1"
+  },
+  {
+    "guid": "DogEggz.EconomyOverhaul",
+    "repo": "https://github.com/DogEggz01/EconomyOverhaul",
+    "version": "0.9.5"
+  },
+  {
+    "guid": "com.DogEggz.HerculesThrow",
+    "repo": "https://github.com/DogEggz01/Hercules-Throw",
+    "version": "0.2.0"
+  },
+  {
+    "guid": "DogEggz.Moorlinefix",
+    "repo": "https://github.com/DogEggz01/MooringLineFix",
+    "version": "1.0.1"
+  },
+  {
+    "guid": "DogEggz.JetPump",
+    "repo": "https://github.com/DogEggz01/Propeller",
+    "version": "1.2.1"
+  },
+  {
+    "guid": "DogEggz.SettingMenuFix",
+    "repo": "https://github.com/DogEggz01/SettingMenuFix",
+    "version": "1.0.0"
+  },
+  {
+    "guid": "DogEggz.Cigar",
+    "repo": "https://github.com/DogEggz01/TobaccoPotAndCigar",
+    "version": "1.2.3"
+  },
+  {
+    "guid": "DogEggz.WindTotem",
+    "repo": "https://github.com/DogEggz01/WindTotem",
+    "version": "1.0.5"
   },
   {
     "guid": "com.kemy.kemyfurniture",
@@ -337,6 +377,16 @@
   {
     "guid": "com.Exocet.SoundEffectVolumeLimiter",
     "repo": "https://github.com/ExocetC3i/Sailwind_SoundEffectVolumeLimiter",
+    "version": "v1.0.2"
+  },
+  {
+    "guid": "com.keevi.defthands",
+    "repo": "https://github.com/KeeviDev/SailwindDeftHands",
+    "version": "v1.2.1"
+  },
+  {
+    "guid": "com.keevi.fixes",
+    "repo": "https://github.com/KeeviDev/SailwindKeeviFixes",
     "version": "v1.0.2"
   }
 ]
