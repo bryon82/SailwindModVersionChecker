@@ -248,8 +248,40 @@
         "repo": "https://github.com/DogEggz01/BetterStorm" 
     },
     {
-        "guid": "DogEggz.SwappableStaysail",
+        "guid": "DogEggz",
         "repo": "https://github.com/DogEggz01/SwappableStaysail"
+    },
+    {
+        "guid": "DogEggz.AlternativeEmeraldSea",
+        "repo": "https://github.com/DogEggz01/AlternativeOceanColor"
+    },
+    {
+        "guid": "DogEggz.EconomyOverhaul",
+        "repo": "https://github.com/DogEggz01/EconomyOverhaul"
+    },
+    {
+        "guid": "com.DogEggz.HerculesThrow",
+        "repo": "https://github.com/DogEggz01/Hercules-Throw"
+    },
+    {
+        "guid": "DogEggz.Moorlinefix",
+        "repo": "https://github.com/DogEggz01/MooringLineFix"
+    },
+    {
+        "guid": "DogEggz.JetPump",
+        "repo": "https://github.com/DogEggz01/Propeller"
+    },
+    {
+        "guid": "DogEggz.SettingMenuFix",
+        "repo": "https://github.com/DogEggz01/SettingMenuFix"
+    },
+    {
+        "guid": "DogEggz.Cigar",
+        "repo": "https://github.com/DogEggz01/TobaccoPotAndCigar"
+    },
+    {
+        "guid": "DogEggz.WindTotem",
+        "repo": "https://github.com/DogEggz01/WindTotem"
     },
     {
         "guid": "com.kemy.kemyfurniture",
