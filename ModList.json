@@ -270,5 +270,13 @@
     {
         "guid": "com.Exocet.SoundEffectVolumeLimiter",
         "repo": "https://github.com/ExocetC3i/Sailwind_SoundEffectVolumeLimiter"
+    },
+    {
+        "guid": "com.keevi.defthands",
+        "repo": "https://github.com/KeeviDev/SailwindDeftHands"
+    },
+    {
+        "guid": "com.keevi.fixes",
+        "repo": "https://github.com/KeeviDev/SailwindKeeviFixes"
     }
 ]
