@@ -167,7 +167,7 @@
   {
     "guid": "com.nandbrew.savecleaner",
     "repo": "https://github.com/NANDbrew/SaveCleaner",
-    "version": "v0.3.3"
+    "version": "v0.3.4"
   },
   {
     "guid": "com.nandbrew.nandtweaks",
@@ -212,7 +212,7 @@
   {
     "guid": "com.nandbrew.missionrework",
     "repo": "https://github.com/NANDbrew/MissionRework",
-    "version": "v1.0.3"
+    "version": "v1.0.4"
   },
   {
     "guid": "com.nandbrew.stickyfix",
