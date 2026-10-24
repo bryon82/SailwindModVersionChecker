@@ -250,9 +250,49 @@
     "version": "v1.0.2"
   },
   {
-    "guid": "com.nandbrew.boatdamagefix",
-    "repo": "https://github.com/NANDbrew/BoatUpdateHack",
+    "guid": "com.nandbrew.shipshape",
+    "repo": "https://github.com/NANDbrew/ShipShape",
     "version": "v1.4.1"
+  },
+  {
+    "guid": "com.nandbrew.scrambledseas",
+    "repo": "https://github.com/NANDbrew/scrambled-seas",
+    "version": "v7.1.9"
+  },
+  {
+    "guid": "com.nandbrew.bettertables",
+    "repo": "https://github.com/NANDbrew/BetterTables",
+    "version": "none"
+  },
+  {
+    "guid": "com.nandbrew.borderexpander",
+    "repo": "https://github.com/NANDbrew/borderexpander",
+    "version": "v0.5.0"
+  },
+  {
+    "guid": "com.nandbrew.headbonker",
+    "repo": "https://github.com/NANDbrew/HeadBonker",
+    "version": "v0.0.3"
+  },
+  {
+    "guid": "com.nandbrew.npctalker",
+    "repo": "https://github.com/NANDbrew/TalkativeNPCs",
+    "version": "v1.0.0"
+  },
+  {
+    "guid": "com.nandbrew.dockclippingpatch",
+    "repo": "https://github.com/NANDbrew/DockClippingPatch",
+    "version": "v0.0.1"
+  },
+  {
+    "guid": "com.nandbrew.WaterWarning",
+    "repo": "https://github.com/NANDbrew/WaterWarning",
+    "version": "v1.0.0"
+  },
+  {
+    "guid": "com.nandbrew.LocalClocks",
+    "repo": "https://github.com/NANDbrew/LocalClocks",
+    "version": "v0.0.1"
   },
   {
     "guid": "com.jakeinaboat.cargocontroller",
