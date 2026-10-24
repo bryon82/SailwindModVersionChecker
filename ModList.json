@@ -200,8 +200,40 @@
         "repo": "https://github.com/NANDbrew/TimeScale"
     },
     {
-        "guid": "com.nandbrew.boatdamagefix",
-        "repo": "https://github.com/NANDbrew/BoatUpdateHack"
+        "guid": "com.nandbrew.shipshape",
+        "repo": "https://github.com/NANDbrew/ShipShape"
+    },
+    {
+        "guid": "com.nandbrew.scrambledseas",
+        "repo": "https://github.com/NANDbrew/scrambled-seas"
+    },
+    {
+        "guid": "com.nandbrew.bettertables",
+        "repo": "https://github.com/NANDbrew/BetterTables"
+    },
+    {
+        "guid": "com.nandbrew.borderexpander",
+        "repo": "https://github.com/NANDbrew/borderexpander"
+    },
+    {
+        "guid": "com.nandbrew.headbonker",
+        "repo": "https://github.com/NANDbrew/HeadBonker"
+    },
+    {
+        "guid": "com.nandbrew.npctalker",
+        "repo": "https://github.com/NANDbrew/TalkativeNPCs"
+    },
+    {
+        "guid": "com.nandbrew.dockclippingpatch",
+        "repo": "https://github.com/NANDbrew/DockClippingPatch"
+    },
+    {
+        "guid": "com.nandbrew.WaterWarning",
+        "repo": "https://github.com/NANDbrew/WaterWarning"
+    },
+    {
+        "guid": "com.nandbrew.LocalClocks",
+        "repo": "https://github.com/NANDbrew/LocalClocks"
     },
     {
         "guid": "com.jakeinaboat.cargocontroller",
