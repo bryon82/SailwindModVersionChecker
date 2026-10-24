@@ -122,7 +122,7 @@
   {
     "guid": "com.bepis.bepinex.configurationmanager",
     "repo": "https://github.com/BepInEx/BepInEx.ConfigurationManager",
-    "version": "v19.0"
+    "version": "v19.1"
   },
   {
     "guid": "pr0skynesis.cookedinfo",
