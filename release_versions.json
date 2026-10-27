@@ -167,7 +167,7 @@
   {
     "guid": "com.nandbrew.savecleaner",
     "repo": "https://github.com/NANDbrew/SaveCleaner",
-    "version": "v0.3.5"
+    "version": "v0.4.0"
   },
   {
     "guid": "com.nandbrew.nandtweaks",
@@ -352,7 +352,7 @@
   {
     "guid": "DogEggz",
     "repo": "https://github.com/DogEggz01/SwappableStaysail",
-    "version": "1.2.2"
+    "version": "1.2.3"
   },
   {
     "guid": "DogEggz.AlternativeEmeraldSea",
@@ -362,7 +362,7 @@
   {
     "guid": "DogEggz.EconomyOverhaul",
     "repo": "https://github.com/DogEggz01/EconomyOverhaul",
-    "version": "1.1.1"
+    "version": "1.1.2"
   },
   {
     "guid": "com.DogEggz.HerculesThrow",
@@ -402,7 +402,7 @@
   {
     "guid": "DogEggz.TentandPlank",
     "repo": "https://github.com/DogEggz01/Tentandplank",
-    "version": "1.1.1"
+    "version": "1.1.2"
   },
   {
     "guid": "com.kemy.kemyfurniture",
