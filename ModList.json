@@ -350,5 +350,9 @@
     {
         "guid": "com.keevi.fixes",
         "repo": "https://github.com/KeeviDev/SailwindKeeviFixes"
+    },
+    {
+        "guid": "com.august.moresailwindsails",
+        "repo": "https://github.com/sum-rock/MoreSailwindSails"
     }
 ]
