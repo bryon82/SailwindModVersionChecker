@@ -395,6 +395,16 @@
     "version": "1.0.6"
   },
   {
+    "guid": "DogEggz.BetterTradeBook",
+    "repo": "https://github.com/DogEggz01/BetterTradeBook",
+    "version": "1.0.1"
+  },
+  {
+    "guid": "DogEggz.TentandPlank",
+    "repo": "https://github.com/DogEggz01/Tentandplank",
+    "version": "1.1.1"
+  },
+  {
     "guid": "com.kemy.kemyfurniture",
     "repo": "https://github.com/Kemylar/KemyFurnitureMod",
     "version": "1.6.0"
@@ -428,5 +438,10 @@
     "guid": "com.keevi.fixes",
     "repo": "https://github.com/KeeviDev/SailwindKeeviFixes",
     "version": "v1.0.2"
+  },
+  {
+    "guid": "com.august.moresailwindsails",
+    "repo": "https://github.com/sum-rock/MoreSailwindSails",
+    "version": "v0.3.1"
   }
 ]
