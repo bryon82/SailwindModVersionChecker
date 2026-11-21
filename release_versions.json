@@ -312,7 +312,7 @@
   {
     "guid": "com.pete.sailwind.windconfigurator",
     "repo": "https://github.com/DogEggz01/ChaoticWind",
-    "version": "1.4.3"
+    "version": "1.4.4"
   },
   {
     "guid": "DogEggz.unlimitedhammer",
@@ -322,7 +322,7 @@
   {
     "guid": "com.pro1p.sailwind.junkandgaffadjustment",
     "repo": "https://github.com/DogEggz01/Sail-Rebalance",
-    "version": "1.2.0"
+    "version": "1.2.1"
   },
   {
     "guid": "com.DogEggz.sailwind.freecameraandcollision",
@@ -387,7 +387,7 @@
   {
     "guid": "DogEggz.Cigar",
     "repo": "https://github.com/DogEggz01/TobaccoPotAndCigar",
-    "version": "1.2.5"
+    "version": "1.2.6"
   },
   {
     "guid": "DogEggz.WindTotem",
