@@ -267,7 +267,7 @@
   {
     "guid": "com.nandbrew.borderexpander",
     "repo": "https://github.com/NANDbrew/borderexpander",
-    "version": "v0.6.1"
+    "version": "v0.6.2"
   },
   {
     "guid": "com.nandbrew.headbonker",
@@ -387,7 +387,7 @@
   {
     "guid": "DogEggz.Cigar",
     "repo": "https://github.com/DogEggz01/TobaccoPotAndCigar",
-    "version": "1.2.6"
+    "version": "1.2.7"
   },
   {
     "guid": "DogEggz.WindTotem",
